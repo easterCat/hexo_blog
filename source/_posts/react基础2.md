@@ -4,6 +4,7 @@ date: 2018-05-09 17:49:24
 tags: react
 ---
 
+<!-- more -->
 
 [react官网](https://reactjs.org/docs/hello-world.html)
 
@@ -40,7 +41,7 @@ export default NoState
 - 无状态组件不需要组件生命周期管理和状态管理，底层在实现这种形式的组件的时候不会实现组件的生命周期方法，所以无状态组件不能参与组件生命周期管理
 - 无状态组件只能访问传入的props，同样的props会得到同样的渲染结果
 
-<!-- more -->
+
 
 当我们的组件开始有逻辑处理，之前的那种方式胜任不了时索要采取的一种形式，通过继承react的Component对象而来
 代码的render方法，则是Component中，专门提供的用来处理jsx模板的方法。
