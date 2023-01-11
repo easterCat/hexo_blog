@@ -16,22 +16,22 @@
   <meta name="author" content="easterCat">
   <meta name="keywords" content="">
   
-    <meta name="description" content="今天是个好日子">
+    <meta name="description" content="SSL 证书部署首先申请免费证书,推荐阿里或者七牛云https:&#x2F;&#x2F;cn.aliyun.com&#x2F;product&#x2F;cas?from_alibabacloud&#x3D;&amp;source&#x3D;5176.11533457&amp;userCode&#x3D;ywqc0ubl&amp;type&#x3D;copy 下载申请好的 ssl 证书文件压缩包到本地并解压到&#x2F;etc&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello,world">
-<meta property="og:url" content="http://yoursite.com/2018/05/09/hello-world-1/index.html">
+<meta property="og:title" content="nginx配置https">
+<meta property="og:url" content="http://yoursite.com/2018/05/09/nginx%E9%85%8D%E7%BD%AEhttps/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="今天是个好日子">
+<meta property="og:description" content="SSL 证书部署首先申请免费证书,推荐阿里或者七牛云https:&#x2F;&#x2F;cn.aliyun.com&#x2F;product&#x2F;cas?from_alibabacloud&#x3D;&amp;source&#x3D;5176.11533457&amp;userCode&#x3D;ywqc0ubl&amp;type&#x3D;copy 下载申请好的 ssl 证书文件压缩包到本地并解压到&#x2F;etc&#x2F;">
 <meta property="og:locale">
-<meta property="article:published_time" content="2018-05-09T07:30:13.000Z">
-<meta property="article:modified_time" content="2023-01-11T02:56:11.680Z">
+<meta property="article:published_time" content="2018-05-09T09:39:55.000Z">
+<meta property="article:modified_time" content="2023-01-11T04:01:11.542Z">
 <meta property="article:author" content="easterCat">
-<meta property="article:tag" content="哈哈哈1223">
+<meta property="article:tag" content="nginx">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>hello,world - Hexo</title>
+  <title>nginx配置https - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="hello,world"></span>
+            <span id="subtitle" data-typed-text="nginx配置https"></span>
           
         </div>
 
@@ -209,7 +209,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2018-05-09 15:30" pubdate>
+        <time datetime="2018-05-09 17:39" pubdate>
           May 9, 2018 pm
         </time>
       </span>
@@ -221,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7 wörter
+          1.2k wörter
         
       </span>
     
@@ -232,7 +232,7 @@
         
         
         
-          1 minuten
+          11 minuten
         
       </span>
     
@@ -270,12 +270,21 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">hello,world</h1>
+            <h1 style="display: none">nginx配置https</h1>
             
             
               <div class="markdown-body">
                 
-                <h4 id="今天是个好日子"><a href="#今天是个好日子" class="headerlink" title="今天是个好日子"></a>今天是个好日子</h4>
+                <h2 id="SSL-证书部署"><a href="#SSL-证书部署" class="headerlink" title="SSL 证书部署"></a><strong><strong>SSL 证书部署</strong></strong></h2><p>首先申请免费证书,推荐阿里或者七牛云<a target="_blank" rel="noopener" href="https://cn.aliyun.com/product/cas?from_alibabacloud=&source=5176.11533457&userCode=ywqc0ubl&type=copy">https://cn.aliyun.com/product/cas?from_alibabacloud&#x3D;&amp;source&#x3D;5176.11533457&amp;userCode&#x3D;ywqc0ubl&amp;type&#x3D;copy</a></p>
+<p>下载申请好的 ssl 证书文件压缩包到本地并解压到&#x2F;etc&#x2F;nginx&#x2F;</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs jsx">/etc/nginx/certificate.<span class="hljs-property">crt</span>;<br><span class="hljs-regexp">/etc/</span>nginx/private.<span class="hljs-property">key</span>;<br></code></pre></td></tr></table></figure>
+
+<p>将这两个文件上传至服务器的&#x2F;etc&#x2F;nginx&#x2F;目录里</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs jsx">scp /<span class="hljs-title class_">Users</span>/lilin/<span class="hljs-title class_">Downloads</span>/certificate.<span class="hljs-property">crt</span> root@xxx.<span class="hljs-property">xx</span>.<span class="hljs-property">xxx</span>.<span class="hljs-property">xx</span>:<span class="hljs-regexp">/etc/</span>nginx/<br>scp /<span class="hljs-title class_">Users</span>/lilin/<span class="hljs-title class_">Downloads</span>/private.<span class="hljs-property">crt</span> root@xxx.<span class="hljs-property">xx</span>.<span class="hljs-property">xxx</span>.<span class="hljs-property">xx</span>:<span class="hljs-regexp">/etc/</span>nginx/<br></code></pre></td></tr></table></figure>
+
+<h2 id="nginx-conf配置"><a href="#nginx-conf配置" class="headerlink" title="nginx.conf配置"></a>nginx.conf配置</h2><p>配置 https <a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=j1N+5oPWtgTmj4YYsFd5ww==.x32KBqxEXmGOwmMZfGjqRXhbghKgM1LsJhVbG+8iji5BQ1P9tGkbxC2u/dahY+V6">server</a>.注释掉之前的 http server 配置,新增 https server</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs jsx">将http重定向https<br>server &#123;<br>        listen <span class="hljs-number">80</span>;<br>        server_name ptg.<span class="hljs-property">life</span> www.<span class="hljs-property">ptg</span>.<span class="hljs-property">life</span> noval.<span class="hljs-property">ptg</span>.<span class="hljs-property">life</span> prompt.<span class="hljs-property">ptg</span>.<span class="hljs-property">life</span> naifu.<span class="hljs-property">ptg</span>.<span class="hljs-property">life</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">301</span> <span class="hljs-attr">https</span>:<span class="hljs-comment">//$host$request_uri;</span><br> &#125;<br><br>server &#123;<br>        listen <span class="hljs-number">443</span> ssl;<br>        server_name ptg.<span class="hljs-property">life</span> www.<span class="hljs-property">ptg</span>.<span class="hljs-property">life</span> noval.<span class="hljs-property">ptg</span>.<span class="hljs-property">life</span> prompt.<span class="hljs-property">ptg</span>.<span class="hljs-property">life</span> naifu.<span class="hljs-property">ptg</span>.<span class="hljs-property">life</span>;<br><br>        # 新版的nginx只用listen <span class="hljs-number">443</span> ssl就行,需要注释<br>        # ssl on;<br>        keepalive_timeout 10m;<br>        server_tokens off;<br>        # 缓存<span class="hljs-variable constant_">SSL</span>握手产生的参数和加密密钥的时长<br>        ssl_session_timeout 10m;<br>        # 证书<br>        ssl_certificate /etc/nginx/certificate.<span class="hljs-property">crt</span>;<br>        ssl_certificate_key /etc/nginx/private.<span class="hljs-property">key</span>;<br>        # 日志<br>        access_log /<span class="hljs-keyword">var</span>/log/nginx/nginx.<span class="hljs-property">vhost</span>.<span class="hljs-property">access</span>.<span class="hljs-property">log</span>;<br>        error_log /<span class="hljs-keyword">var</span>/log/nginx/nginx.<span class="hljs-property">vhost</span>.<span class="hljs-property">error</span>.<span class="hljs-property">log</span>;<br><br>        # 根用iframe嵌入做个隐式url<br>        location / &#123;<br>            index index.<span class="hljs-property">html</span> index.<span class="hljs-property">htm</span> index.<span class="hljs-property">html</span> inde.<span class="hljs-property">php</span>;<br>            root /usr/share/nginx/html;<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -287,7 +296,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%93%88%E5%93%88%E5%93%881223/">#哈哈哈1223</a>
+        <a href="/tags/nginx/">#nginx</a>
       
     </div>
   
@@ -299,8 +308,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hello,world</div>
-      <div>http://yoursite.com/2018/05/09/hello-world-1/</div>
+      <div>nginx配置https</div>
+      <div>http://yoursite.com/2018/05/09/nginx配置https/</div>
     </div>
     <div class="license-meta">
       
@@ -344,15 +353,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2018/05/09/ubuntu%2018%20%E5%AE%89%E8%A3%85%20nginx/" title="ubuntu18安装nginx">
+                      <a href="/2018/05/09/nginx%E9%85%8D%E7%BD%AE/" title="nginx配置">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ubuntu18安装nginx</span>
+                        <span class="hidden-mobile">nginx配置</span>
                         <span class="visible-mobile">Vorheriger</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2018/05/09/ubuntu%2018%20%E5%AE%89%E8%A3%85%20nginx/" title="ubuntu18安装nginx">
+                        <span class="hidden-mobile">ubuntu18安装nginx</span>
+                        <span class="visible-mobile">Nächster</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
