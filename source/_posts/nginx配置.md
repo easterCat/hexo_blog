@@ -1,8 +1,9 @@
 ---
-title: 'nginx配置'
-date: 2018-05-09 17:39:55
-tags: nginx
+title: nginx配置
+date: 2023-01-11 12:05:22
+tags:
 ---
+
 
 ### nginx配置
 

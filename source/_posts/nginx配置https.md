@@ -1,8 +1,10 @@
 ---
-title: 'nginx配置https'
-date: 2018-05-09 17:39:55
-tags: nginx
+title: nginx配置https
+date: 2023-01-11 12:04:52
+tags:
 ---
+
+
 
 ## ****SSL 证书部署****
 

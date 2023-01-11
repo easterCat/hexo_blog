@@ -1,7 +1,7 @@
 ---
-title: 'ubuntu18安装nginx'
-date: 2018-05-09 17:39:55
-tags: nginx
+title: ubuntu18安装nginx
+date: 2023-01-11 12:04:03
+tags:
 ---
 
 ### **apt安装**sudo apt update
