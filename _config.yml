@@ -80,7 +80,7 @@ theme: hexo-theme-fluid
 deploy:
     type: git
     repository: git@github.com:easterCat/easterCat.github.io.git
-    branch: master
+    branch: main
 
 jsonContent:
     meta: false
