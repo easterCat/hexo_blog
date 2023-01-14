@@ -1,5 +1,6 @@
 ---
 title: tags
-layout: tags
-date: 2018-05-09 17:01:25
+date: 2021-02-26 16:36:55
+type: "tags"
+layout: "tags"
 ---
