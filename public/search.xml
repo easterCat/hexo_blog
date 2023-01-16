@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>mysql的processlist中处理表连接</title>
+      <link href="/2023/01/16/mysql%E7%9A%84processlist%E4%B8%AD%E5%A4%84%E7%90%86%E8%A1%A8%E8%BF%9E%E6%8E%A5/"/>
+      <url>/2023/01/16/mysql%E7%9A%84processlist%E4%B8%AD%E5%A4%84%E7%90%86%E8%A1%A8%E8%BF%9E%E6%8E%A5/</url>
+      
+        <content type="html"><![CDATA[<h2 id="processlist中大量sleep"><a href="#processlist中大量sleep" class="headerlink" title="processlist中大量sleep"></a>processlist中大量sleep</h2><p>在生产环境切换mysql数据库，切换后数据库连接池爆满，抛出异常“too many connections”；</p><p>出现这种现象，比较常见的原因是连接数真不够了，需要设置连接数：</p><h3 id="连接数不够解决"><a href="#连接数不够解决" class="headerlink" title="连接数不够解决"></a>连接数不够解决</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p;</span><br><span class="line">show full processlist;</span><br><span class="line">kill id;</span><br></pre></td></tr></table></figure><h3 id="查看最大连接数"><a href="#查看最大连接数" class="headerlink" title="查看最大连接数"></a>查看最大连接数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like <span class="string">&quot;max_connections&quot;</span>;</span><br></pre></td></tr></table></figure><p>查看最大连接数，应该是与上面查询到的连接数相同，才会出现too many connections的情况</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set <span class="variable constant_">GLOBAL</span> max_connections=<span class="number">1000</span>;</span><br></pre></td></tr></table></figure><p>修改最大连接数，但是这不是一劳永逸的方法，应该要让它自动杀死那些sleep的进程。</p><h3 id="自动杀死那些sleep的进程"><a href="#自动杀死那些sleep的进程" class="headerlink" title="自动杀死那些sleep的进程"></a>自动杀死那些sleep的进程</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show <span class="variable language_">global</span> variables like <span class="string">&#x27;wait_timeout&#x27;</span>;</span><br></pre></td></tr></table></figure><p>这个数值指的是mysql在关闭一个非交互的连接之前要等待的秒数，默认是28800s</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set <span class="variable language_">global</span> wait_timeout=<span class="number">300</span>; </span><br></pre></td></tr></table></figure><p>修改这个数值，这里可以随意，最好控制在几分钟内</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set <span class="variable language_">global</span> interactive_timeout=<span class="number">500</span>; </span><br></pre></td></tr></table></figure><p>修改这个数值，表示mysql在关闭一个连接之前要等待的秒数，至此可以让mysql自动关闭那些没用的连接，但要注意的是，正在使用的连接到了时间也会被关闭，因此这个时间值要合适</p><h3 id="笨方法"><a href="#笨方法" class="headerlink" title="笨方法"></a>笨方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select <span class="title function_">concat</span>(<span class="string">&#x27;KILL &#x27;</span>,id,<span class="string">&#x27;;&#x27;</span>) <span class="keyword">from</span> information_schema.<span class="property">processlist</span> where user=<span class="string">&#x27;root&#x27;</span>;</span><br></pre></td></tr></table></figure><p>先把要kill的连接id都查询出来,然后一个个kill</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>flask-sqlalchemy使用</title>
       <link href="/2023/01/12/flask-sqlalchemy%E4%BD%BF%E7%94%A8/"/>
       <url>/2023/01/12/flask-sqlalchemy%E4%BD%BF%E7%94%A8/</url>

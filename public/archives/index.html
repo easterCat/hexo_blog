@@ -189,6 +189,17 @@ var _hmt = _hmt || [];
 			
 							<ul>
 								<li class="file">
+									<a href="/2023/01/16/mysql%E7%9A%84processlist%E4%B8%AD%E5%A4%84%E7%90%86%E8%A1%A8%E8%BF%9E%E6%8E%A5/">
+                     
+										    mysql的processlist中处理表连接
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2023/01/11/nginx%E9%85%8D%E7%BD%AE/">
                      
 										    nginx配置
@@ -260,6 +271,26 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<div id="index">
+	
+		<div class="index-li">
+			<a href="/2023/01/16/mysql%E7%9A%84processlist%E4%B8%AD%E5%A4%84%E7%90%86%E8%A1%A8%E8%BF%9E%E6%8E%A5/">
+				<h2 class="index-title">
+					mysql的processlist中处理表连接
+				</h2>
+				<div class="index-brief">
+					processlist中大量sleep在生产环境切换mysql数据库，切换后数据库连接池爆满，抛出异常“too many connections”；
+出现这种现象，比较常见的原因是连接数真不够了，需要设置连接数：
+连接数不够解决123mysql -u root -p;show full proces
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2023-01-16</span>
+                    
+                            
+                    
+                </div>
+		</div>	
 	
 		<div class="index-li">
 			<a href="/2023/01/12/flask-sqlalchemy%E4%BD%BF%E7%94%A8/">
@@ -437,27 +468,6 @@ nginx安装位置1**whereis nginx**
 			</a>
                 <div class="article-meta">
 				    <span>2023-01-11</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2018/05/09/react%E5%9F%BA%E7%A1%802/">
-				<h2 class="index-title">
-					react基础2
-				</h2>
-				<div class="index-brief">
-					react官网
-组件1. 无状态组件
-在React中，组件的名字必须用大写字母开头，而包含该组件定义的文件名也应该是大写字母(便于区分，也可以不是)。
-无状态组件是纯展示组件，仅仅只是用于数据的展示，只根据传入的props来进行展示，不涉及到state状态处理，通过函数式的方式来创建一个无状态函数式
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2018-05-09</span>
                     
                             
                     
