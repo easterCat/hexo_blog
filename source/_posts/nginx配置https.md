@@ -1,5 +1,5 @@
 ---
-title: nginx配置https
+title: Nginx配置https
 date: 2023-01-11 12:04:52
 tags:
 ---
