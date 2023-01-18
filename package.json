@@ -6,8 +6,9 @@
         "version": "6.3.0"
     },
     "scripts": {
-        "d": "hexo g & hexo deploy",
-        "p": "git add . && git commit -m 'fast commit' && git push origin main"
+        "deploy": "hexo generate && hexo deploy",
+        "push": "git add . && git commit -m 'fast commit' && git push origin main",
+        "preview": "hexo generate && hexo server"
     },
     "dependencies": {
         "hexo": "6.3.0",

@@ -1,5 +1,5 @@
 ---
-title: flask-sqlalchemy使用
+title: Flask-sqlalchemy使用
 date: 2023-01-12 15:48:11
 tags:
 ---
