@@ -1,7 +1,7 @@
 ---
 title: Ubuntu18安装nginx
 date: 2023-01-11 12:04:03
-tags:
+tags: Ubuntu
 ---
 
 ### **apt安装**sudo apt update

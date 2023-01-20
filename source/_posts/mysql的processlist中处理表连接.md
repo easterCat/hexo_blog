@@ -1,7 +1,7 @@
 ---
 title: Mysql的processlist中处理表连接
 date: 2023-01-16 16:22:53
-tags:
+tags: Mysql
 ---
 
 

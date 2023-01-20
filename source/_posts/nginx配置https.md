@@ -1,7 +1,10 @@
 ---
-title: Nginx配置https
+title: Nginx配置Https
 date: 2023-01-11 12:04:52
-tags:
+tags: 
+ - Nginx 
+ - Https
+categories: Nginx
 ---
 
 

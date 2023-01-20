@@ -10,7 +10,7 @@
 
     <!-- title -->
     
-    <title> Nginx配置Https |  Hexo</title>
+    <title> Hexo</title>
 
     <!-- keywords,description -->
      
@@ -173,7 +173,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AEHttps/">
                      
 										    Nginx配置Https
@@ -222,131 +222,39 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<h1 id="article-title">
-    Nginx配置Https
-</h1>
-<div class="article-meta">
-    
-    <span>easterCat</span>
-    <span>2023-01-11 12:04:52</span>
-    <div id="article-categories">
-        
-        <span>Categories：</span>
-         
-        <span>
-            <i class="fa fa-folder" aria-hidden="true">
-                <a href="/categories/Nginx/"
-                    >Nginx</a
-                >
-            </i>
-            
-        </span>
-           
-        <span>Tags：</span>
-         
-        <span>
-            <i class="fa fa-tag" aria-hidden="true">
-                <a href="/tags/Nginx/"
-                    >Nginx</a
-                >
-            </i>
-        </span>
-          
-        <span>
-            <i class="fa fa-tag" aria-hidden="true">
-                <a href="/tags/Https/"
-                    >Https</a
-                >
-            </i>
-        </span>
-          
-    </div>
+		<div id="index">
+	
+		<div class="index-li">
+			<a href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AEHttps/">
+				<h2 class="index-title">
+					Nginx配置Https
+				</h2>
+				<div class="index-brief">
+					SSL 证书部署首先申请免费证书,推荐阿里或者七牛云https://cn.aliyun.com/product/cas?from_alibabacloud&#x3D;&amp;source&#x3D;5176.11533457&amp;userCode&#x3D;ywqc0ubl&amp;type&
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2023-01-11</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/Nginx/">Nginx</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>	
+	
+	
+	<div id="index-paginator">
+		
+	</div>
 </div>
-
-<div id="article-content"><h2 id="SSL-证书部署"><a href="#SSL-证书部署" class="headerlink" title="SSL 证书部署"></a><strong><strong>SSL 证书部署</strong></strong></h2><p>首先申请免费证书,推荐阿里或者七牛云<a target="_blank" rel="noopener" href="https://cn.aliyun.com/product/cas?from_alibabacloud=&source=5176.11533457&userCode=ywqc0ubl&type=copy">https://cn.aliyun.com/product/cas?from_alibabacloud&#x3D;&amp;source&#x3D;5176.11533457&amp;userCode&#x3D;ywqc0ubl&amp;type&#x3D;copy</a></p>
-<p>下载申请好的 ssl 证书文件压缩包到本地并解压到&#x2F;etc&#x2F;nginx&#x2F;</p>
-<pre><code class="jsx">/etc/nginx/certificate.crt;
-/etc/nginx/private.key;
-</code></pre>
-<p>将这两个文件上传至服务器的&#x2F;etc&#x2F;nginx&#x2F;目录里</p>
-<pre><code class="jsx">scp /Users/lilin/Downloads/certificate.crt root@xxx.xx.xxx.xx:/etc/nginx/
-scp /Users/lilin/Downloads/private.crt root@xxx.xx.xxx.xx:/etc/nginx/
-</code></pre>
-<h2 id="nginx-conf配置"><a href="#nginx-conf配置" class="headerlink" title="nginx.conf配置"></a>nginx.conf配置</h2><p>配置 https <a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=j1N+5oPWtgTmj4YYsFd5ww==.x32KBqxEXmGOwmMZfGjqRXhbghKgM1LsJhVbG+8iji5BQ1P9tGkbxC2u/dahY+V6">server</a>.注释掉之前的 http server 配置,新增 https server</p>
-<pre><code class="jsx">将http重定向https
-server &#123;
-        listen 80;
-        server_name ptg.life www.ptg.life noval.ptg.life prompt.ptg.life naifu.ptg.life;
-        return 301 https://$host$request_uri;
- &#125;
-
-server &#123;
-        listen 443 ssl;
-        server_name ptg.life www.ptg.life noval.ptg.life prompt.ptg.life naifu.ptg.life;
-
-        # 新版的nginx只用listen 443 ssl就行,需要注释
-        # ssl on;
-        keepalive_timeout 10m;
-        server_tokens off;
-        # 缓存SSL握手产生的参数和加密密钥的时长
-        ssl_session_timeout 10m;
-        # 证书
-        ssl_certificate /etc/nginx/certificate.crt;
-        ssl_certificate_key /etc/nginx/private.key;
-        # 日志
-        access_log /var/log/nginx/nginx.vhost.access.log;
-        error_log /var/log/nginx/nginx.vhost.error.log;
-
-        # 根用iframe嵌入做个隐式url
-        location / &#123;
-            index index.html index.htm index.html inde.php;
-            root /usr/share/nginx/html;
-        &#125;
-    &#125;
-</code></pre>
-</div>
-
-
-<div class="post-guide">
-    <div class="item left">
-        
-        <a href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AE/">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-            Nginx配置
-        </a>
-        
-    </div>
-    <div class="item right">
-        
-        <a href="/2023/01/11/Ubuntu18%E5%AE%89%E8%A3%85nginx/">
-            Ubuntu18安装nginx
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-        </a>
-        
-    </div>
-</div>
- 
-<div id="vcomments"></div>
-
-
-<script>
-    
-    	// 评论
-    	new Valine({
-    		el: '#vcomments',
-    		appId: '',
-    		appKey: '',
-    		placeholder: '请输入评论',
-    		path: window.location.pathname,
-    		avatar: 'retro',
-    		highlight: false,
-         recordIP: true,
-         enableQQ: true,
-    		requiredFields: ['nick','mail']
-    	})
-    
-    
-</script>
 
 	</div>
 	<div id="footer">

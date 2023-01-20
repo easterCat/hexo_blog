@@ -1,7 +1,7 @@
 ---
 title: SEO技巧
 date: 2023-01-11 12:08:10
-tags:
+tags: SEO
 ---
 
 # SEO技巧

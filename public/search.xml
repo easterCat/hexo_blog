@@ -12,6 +12,12 @@
       
       
       
+        <tags>
+            
+            <tag> Mysql </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -24,6 +30,12 @@
         <content type="html"><![CDATA[<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><pre><code class="js">1.  filter()    把过滤器添加到原查询上，返回一个新查询2.  filter_by()    把等值过滤器添加到原查询上，返回一个新查询3.  limit    使用指定的值限定原查询返回的结果4.  offset()    偏移原查询返回的结果，返回一个新查询5.  order_by()    根据指定条件对原查询结果进行排序，返回一个新查询6.  group_by()    根据指定条件对原查询结果进行分组，返回一个新查询7.  all()    以列表形式返回查询的所有结果8.  first()    返回查询的第一个结果，如果未查到，返回 None9.  first_or_404()    返回查询的第一个结果，如果未查到，返回 40410.  get()    返回指定主键对应的行，如不存在，返回 None11.  get_or_404()    返回指定主键对应的行，如不存在，返回 40412.  count()    返回查询结果的数量13.  paginate()    返回一个Paginate对象，它包含指定范围内的结果</code></pre><pre><code class="js">1.  &quot;&quot;&quot;2.  查询所有用户数据3.  User.query.all()5.  查询有多少个用户6.  User.query.count()8.  查询第1个用户9.  User.query.first()10.  User.query.get(1) # 根据id查询12.  查询id为4的用户[3种方式]13.  User.query.get(4)14.  User.query.filter_by(id=4).all() # 简单查询 使用关键字实参的形式来设置字段名15.  User.query.filter(User.id == 4).all() # 复杂查询 使用恒等式等其他形式来设置条件17.  查询名字结尾字符为g的所有用户[开始 / 包含]18.  User.query.filter(User.name.endswith(&quot;g&quot;)).all()19.  User.query.filter(User.name.startswith(&quot;w&quot;)).all()20.  User.query.filter(User.name.contains(&quot;n&quot;)).all()21.  User.query.filter(User.name.like(&quot;%n%g&quot;)).all() 模糊查询23.  查询名字和邮箱都以li开头的所有用户[2种方式]24.  User.query.filter(User.name.startswith(&quot;li&quot;), User.email.startswith(&quot;li&quot;)).all()26.  from sqlalchemy import and_27.  User.query.filter(and_(User.name.startswith(&quot;li&quot;), User.email.startswith(&quot;li&quot;))).all()29.  查询age是25 或者 \`email\`以\`itheima.com\`结尾的所有用户30.  from sqlalchemy import or_31.  User.query.filter(or_(User.age == 25, User.email.endswith(&quot;itheima.com&quot;))).all()33.  查询名字不等于wang的所有用户[2种方式]34.  from sqlalchemy import not_35.  User.query.filter(not_(User.name == &quot;wang&quot;)).all()36.  User.query.filter(User.name != &quot;wang&quot;).all()38.  查询id为[1, 3, 5, 7, 9]的用户39.  User.query.filter(User.id.in_([1, 3, 5, 7, 9])).all()41.  所有用户先按年龄从小到大, 再按id从大到小排序, 取前5个42.  User.query.order_by(User.age, User.id.desc()).limit(5).all()44.  分页查询, 每页3个, 查询第2页的数据45.  pn = User.query.paginate(2, 3)46.  pn.items 获取该页的数据 pn.page 获取当前的页码 pn.pages 获取总页数</code></pre>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
       
     </entry>
     
@@ -38,6 +50,12 @@
       
       
       
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -50,6 +68,12 @@
         <content type="html"><![CDATA[<h1 id="Android-studio操作"><a href="#Android-studio操作" class="headerlink" title="Android studio操作"></a>Android studio操作</h1><p>command + shift + R 当前文件替换</p><p>command + shift + F 全局查找</p><p>command + shift + R 全局替换</p><p>command + O 全局搜索类**&#x2F;<strong>文件</strong>&#x2F;<strong>关键字</strong>&#x2F;(<strong>包括系统类</strong>,<strong>自定义类</strong>)**</p><p>command + option + O 全局搜索方法</p><p>option + enter 将<strong>StatelessWidget</strong>转 <strong>StatefulWidget</strong>   快速修复  ****快速生成构造方法</p><p>command  + option + W 抽取代码为单独的<strong>Widget</strong></p><p>command  + option + M 抽取代码为单独的方法**,<strong>或者抽取成</strong>get**方法</p><p>command + option + L 格式化代码</p><p>command + D 复制单行</p><p>option + shift + up&#x2F;down上下移动代码</p><p>command + \  热重载**(hot reload)**</p><p>control+ R 运行项目</p><p>command+ delete 删除行</p><p><strong>Shift</strong> 双击 ****万能搜索</p><p>stless 快速创建一个<strong>StatelessWidget</strong></p><p>stful 快速创建一个<strong>StatefulWidget</strong></p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -64,6 +88,12 @@
       
       
       
+        <tags>
+            
+            <tag> SEO </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -73,22 +103,48 @@
       <link href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AE/"/>
       <url>/2023/01/11/Nginx%E9%85%8D%E7%BD%AE/</url>
       
-        <content type="html"><![CDATA[<h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><pre><code class="js">user www-data;#启动进程,通常设置成和cpu的数量相等worker_processes 2;pid /run/nginx.pid;include /etc/nginx/modules-enabled/*.conf;events &#123;    worker_connections 768;    # multi_accept on;&#125;http &#123;    ##    # Basic Settings    ##    sendfile on;    tcp_nopush on;    types_hash_max_size 2048;    # server_tokens off;    # server_names_hash_bucket_size 64;    # server_name_in_redirect off;    include /etc/nginx/mime.types;    default_type application/octet-stream;    ##    # SSL Settings    ##    ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE    ssl_prefer_server_ciphers on;    ##    # Logging Settings    ##    access_log /var/log/nginx/access.log;    error_log /var/log/nginx/error.log;    # Gzip Settings    gzip on;    gzip_min_length 1000;    gzip_vary on;    gzip_proxied any;    gzip_comp_level 6;    gzip_buffers 16 8k;    gzip_http_version 1.1;    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;    ##    # Virtual Host Configs    ##    include /etc/nginx/conf.d/*.conf;    include /etc/nginx/sites-enabled/*;    map $sent_http_content_type $expires &#123;        &quot;text/html&quot; epoch;        &quot;text/html; charset=utf-8&quot; epoch;        default off;    &#125;    server &#123;        listen 80;        server_name ptg.life www.ptg.life noval.ptg.life prompt.ptg.life;        return 301 https://$host$request_uri;        # gzip on;        # gzip_types text/plain application/xml text/css application/javascript;        # gzip_min_length 1000;        # location / &#123;        #     expires $expires;        #     proxy_redirect off;        #     proxy_set_header Host $host;        #     proxy_set_header X-Real-IP $remote_addr;        #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;        #     proxy_set_header X-Forwarded-Proto $scheme;        #     proxy_read_timeout 1m;        #     proxy_connect_timeout 1m;        #     proxy_pass http://127.0.0.1:3000/;        # &#125;        # location ~ /.well-known &#123;        #     allow all;        # &#125;        # location ^~ /.well-known/pki-validation/ &#123;        #     add_header Cache-Control no-cache;        #     default_type &quot;text/plain&quot;;        #     rewrite /.well-known/pki-validation/(.*) /$1 break;        #     root /var/www/whatever;        # &#125;        # location /nuxt3-tag &#123;        #     expires $expires;        #     proxy_redirect off;        #     proxy_set_header Host $host;        #     proxy_set_header X-Real-IP $remote_addr;        #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;        #     proxy_set_header X-Forwarded-Proto $scheme;        #     proxy_read_timeout 1m;        #     proxy_connect_timeout 1m;        #     proxy_pass http://127.0.0.1:3000/nuxt3-tag;        # &#125;        # location /stable &#123;        #     rewrite ^/(.*) http://www.ptg.life:3000/nuxt3-tag permanent;        # &#125;        # location /nuxt3 &#123;        #     rewrite ^/(.*) http://www.ptg.life:3000/nuxt3-tag permanent;        # &#125;        # location /tag &#123;        #     rewrite ^/(.*) http://www.ptg.life:3000/nuxt3-tag permanent;        # &#125;        # location /stable/api &#123;        #     proxy_pass http://www.ptg.life:5000/api;        #     proxy_set_header Access-Control-Max-Age 86400;        #     proxy_set_header Host $host;        #     proxy_redirect off;        #     proxy_set_header X-Real-IP $remote_addr;        #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;        #     proxy_connect_timeout 60;        #     proxy_read_timeout 60;        #     proxy_send_timeout 60;        # &#125;        # location /static/ &#123;        #     valid_referers none blocked *.ptg.life;        #     if ($invalid_referer) &#123;        #         return 403;        #         break;        #     &#125;        #     expires 30d;        #     autoindex on;        #     root /data;        # &#125;    &#125;    server &#123;        listen 443 ssl;        server_name ptg.life www.ptg.life noval.ptg.life prompt.ptg.life naifu.ptg.life;        # 新版的nginx只用listen 443 ssl就行,需要注释        # ssl on;        keepalive_timeout 10m;        server_tokens off;        # 缓存SSL握手产生的参数和加密密钥的时长        ssl_session_timeout 10m;        # 证书        ssl_certificate /etc/nginx/certificate.crt;        ssl_certificate_key /etc/nginx/private.key;        # 日志        access_log /var/log/nginx/nginx.vhost.access.log;        error_log /var/log/nginx/nginx.vhost.error.log;        # 根用iframe嵌入做个隐式url        location / &#123;            index index.html index.htm index.html inde.php;            root /usr/share/nginx/html;        &#125;        location ~ /.well-known &#123;            allow all;        &#125;        location ^~ /.well-known/pki-validation/ &#123;            add_header Cache-Control no-cache;            default_type &quot;text/plain&quot;;            rewrite /.well-known/pki-validation/(.*) /$1 break;            root /var/www/whatever;        &#125;        location /nuxt3-tag/ &#123;            expires $expires;            proxy_redirect off;            proxy_set_header Host $host;            proxy_set_header X-Real-IP $remote_addr;            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;            proxy_set_header X-Forwarded-Proto $scheme;            proxy_read_timeout 1m;            proxy_connect_timeout 1m;            proxy_pass http://127.0.0.1:3000/nuxt3-tag/;        &#125;        location /naifu/ &#123;            expires $expires;            proxy_redirect off;            proxy_set_header Host $host;            proxy_set_header X-Real-IP $remote_addr;            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;            proxy_set_header X-Forwarded-Proto $scheme;            proxy_read_timeout 1m;            proxy_connect_timeout 1m;            proxy_pass http://127.0.0.1:3000/naifu/;        &#125;        location /nuxt3 &#123;            rewrite ^/(.*) $host://$http_host/nuxt3-tag permanent;        &#125;        location /tag &#123;            rewrite ^/(.*) $host://$http_host/nuxt3-tag permanent;        &#125;        # flask的接口代理        location /stable/api &#123;            proxy_pass http://127.0.0.1:5000/api;            proxy_set_header Access-Control-Max-Age 86400;            proxy_set_header Host $host;            proxy_redirect off;            proxy_set_header X-Real-IP $remote_addr;            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;            proxy_connect_timeout 60;            proxy_read_timeout 60;            proxy_send_timeout 60;        &#125;        location /static/ &#123;            valid_referers none blocked *.ptg.life;            if ($invalid_referer) &#123;                return 403;                break;            &#125;            expires 30d;            autoindex on;            root /data;        &#125;    &#125;&#125;</code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h2><pre><code class="js">user www-data;#启动进程,通常设置成和cpu的数量相等worker_processes 2;pid /run/nginx.pid;include /etc/nginx/modules-enabled/*.conf;events &#123;    worker_connections 768;    # multi_accept on;&#125;http &#123;    ##    # Basic Settings    ##    sendfile on;    tcp_nopush on;    types_hash_max_size 2048;    # server_tokens off;    # server_names_hash_bucket_size 64;    # server_name_in_redirect off;    include /etc/nginx/mime.types;    default_type application/octet-stream;    ##    # SSL Settings    ##    ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE    ssl_prefer_server_ciphers on;    ##    # Logging Settings    ##    access_log /var/log/nginx/access.log;    error_log /var/log/nginx/error.log;    # Gzip Settings    gzip on;    gzip_min_length 1000;    gzip_vary on;    gzip_proxied any;    gzip_comp_level 6;    gzip_buffers 16 8k;    gzip_http_version 1.1;    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;    ##    # Virtual Host Configs    ##    include /etc/nginx/conf.d/*.conf;    include /etc/nginx/sites-enabled/*;    map $sent_http_content_type $expires &#123;        &quot;text/html&quot; epoch;        &quot;text/html; charset=utf-8&quot; epoch;        default off;    &#125;    server &#123;        listen 80;        server_name ptg.life www.ptg.life noval.ptg.life prompt.ptg.life;        return 301 https://$host$request_uri;        # gzip on;        # gzip_types text/plain application/xml text/css application/javascript;        # gzip_min_length 1000;        # location / &#123;        #     expires $expires;        #     proxy_redirect off;        #     proxy_set_header Host $host;        #     proxy_set_header X-Real-IP $remote_addr;        #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;        #     proxy_set_header X-Forwarded-Proto $scheme;        #     proxy_read_timeout 1m;        #     proxy_connect_timeout 1m;        #     proxy_pass http://127.0.0.1:3000/;        # &#125;        # location ~ /.well-known &#123;        #     allow all;        # &#125;        # location ^~ /.well-known/pki-validation/ &#123;        #     add_header Cache-Control no-cache;        #     default_type &quot;text/plain&quot;;        #     rewrite /.well-known/pki-validation/(.*) /$1 break;        #     root /var/www/whatever;        # &#125;        # location /nuxt3-tag &#123;        #     expires $expires;        #     proxy_redirect off;        #     proxy_set_header Host $host;        #     proxy_set_header X-Real-IP $remote_addr;        #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;        #     proxy_set_header X-Forwarded-Proto $scheme;        #     proxy_read_timeout 1m;        #     proxy_connect_timeout 1m;        #     proxy_pass http://127.0.0.1:3000/nuxt3-tag;        # &#125;        # location /stable &#123;        #     rewrite ^/(.*) http://www.ptg.life:3000/nuxt3-tag permanent;        # &#125;        # location /nuxt3 &#123;        #     rewrite ^/(.*) http://www.ptg.life:3000/nuxt3-tag permanent;        # &#125;        # location /tag &#123;        #     rewrite ^/(.*) http://www.ptg.life:3000/nuxt3-tag permanent;        # &#125;        # location /stable/api &#123;        #     proxy_pass http://www.ptg.life:5000/api;        #     proxy_set_header Access-Control-Max-Age 86400;        #     proxy_set_header Host $host;        #     proxy_redirect off;        #     proxy_set_header X-Real-IP $remote_addr;        #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;        #     proxy_connect_timeout 60;        #     proxy_read_timeout 60;        #     proxy_send_timeout 60;        # &#125;        # location /static/ &#123;        #     valid_referers none blocked *.ptg.life;        #     if ($invalid_referer) &#123;        #         return 403;        #         break;        #     &#125;        #     expires 30d;        #     autoindex on;        #     root /data;        # &#125;    &#125;    server &#123;        listen 443 ssl;        server_name ptg.life www.ptg.life noval.ptg.life prompt.ptg.life naifu.ptg.life;        # 新版的nginx只用listen 443 ssl就行,需要注释        # ssl on;        keepalive_timeout 10m;        server_tokens off;        # 缓存SSL握手产生的参数和加密密钥的时长        ssl_session_timeout 10m;        # 证书        ssl_certificate /etc/nginx/certificate.crt;        ssl_certificate_key /etc/nginx/private.key;        # 日志        access_log /var/log/nginx/nginx.vhost.access.log;        error_log /var/log/nginx/nginx.vhost.error.log;        # 根用iframe嵌入做个隐式url        location / &#123;            index index.html index.htm index.html inde.php;            root /usr/share/nginx/html;        &#125;        location ~ /.well-known &#123;            allow all;        &#125;        location ^~ /.well-known/pki-validation/ &#123;            add_header Cache-Control no-cache;            default_type &quot;text/plain&quot;;            rewrite /.well-known/pki-validation/(.*) /$1 break;            root /var/www/whatever;        &#125;        location /nuxt3-tag/ &#123;            expires $expires;            proxy_redirect off;            proxy_set_header Host $host;            proxy_set_header X-Real-IP $remote_addr;            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;            proxy_set_header X-Forwarded-Proto $scheme;            proxy_read_timeout 1m;            proxy_connect_timeout 1m;            proxy_pass http://127.0.0.1:3000/nuxt3-tag/;        &#125;        location /naifu/ &#123;            expires $expires;            proxy_redirect off;            proxy_set_header Host $host;            proxy_set_header X-Real-IP $remote_addr;            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;            proxy_set_header X-Forwarded-Proto $scheme;            proxy_read_timeout 1m;            proxy_connect_timeout 1m;            proxy_pass http://127.0.0.1:3000/naifu/;        &#125;        location /nuxt3 &#123;            rewrite ^/(.*) $host://$http_host/nuxt3-tag permanent;        &#125;        location /tag &#123;            rewrite ^/(.*) $host://$http_host/nuxt3-tag permanent;        &#125;        # flask的接口代理        location /stable/api &#123;            proxy_pass http://127.0.0.1:5000/api;            proxy_set_header Access-Control-Max-Age 86400;            proxy_set_header Host $host;            proxy_redirect off;            proxy_set_header X-Real-IP $remote_addr;            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;            proxy_connect_timeout 60;            proxy_read_timeout 60;            proxy_send_timeout 60;        &#125;        location /static/ &#123;            valid_referers none blocked *.ptg.life;            if ($invalid_referer) &#123;                return 403;                break;            &#125;            expires 30d;            autoindex on;            root /data;        &#125;    &#125;&#125;</code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> Nginx </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>Nginx配置https</title>
-      <link href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AEhttps/"/>
-      <url>/2023/01/11/Nginx%E9%85%8D%E7%BD%AEhttps/</url>
+      <title>Nginx配置Https</title>
+      <link href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AEHttps/"/>
+      <url>/2023/01/11/Nginx%E9%85%8D%E7%BD%AEHttps/</url>
       
         <content type="html"><![CDATA[<h2 id="SSL-证书部署"><a href="#SSL-证书部署" class="headerlink" title="SSL 证书部署"></a><strong><strong>SSL 证书部署</strong></strong></h2><p>首先申请免费证书,推荐阿里或者七牛云<a href="https://cn.aliyun.com/product/cas?from_alibabacloud=&source=5176.11533457&userCode=ywqc0ubl&type=copy">https://cn.aliyun.com/product/cas?from_alibabacloud&#x3D;&amp;source&#x3D;5176.11533457&amp;userCode&#x3D;ywqc0ubl&amp;type&#x3D;copy</a></p><p>下载申请好的 ssl 证书文件压缩包到本地并解压到&#x2F;etc&#x2F;nginx&#x2F;</p><pre><code class="jsx">/etc/nginx/certificate.crt;/etc/nginx/private.key;</code></pre><p>将这两个文件上传至服务器的&#x2F;etc&#x2F;nginx&#x2F;目录里</p><pre><code class="jsx">scp /Users/lilin/Downloads/certificate.crt root@xxx.xx.xxx.xx:/etc/nginx/scp /Users/lilin/Downloads/private.crt root@xxx.xx.xxx.xx:/etc/nginx/</code></pre><h2 id="nginx-conf配置"><a href="#nginx-conf配置" class="headerlink" title="nginx.conf配置"></a>nginx.conf配置</h2><p>配置 https <a href="https://link.segmentfault.com/?enc=j1N+5oPWtgTmj4YYsFd5ww==.x32KBqxEXmGOwmMZfGjqRXhbghKgM1LsJhVbG+8iji5BQ1P9tGkbxC2u/dahY+V6">server</a>.注释掉之前的 http server 配置,新增 https server</p><pre><code class="jsx">将http重定向httpsserver &#123;        listen 80;        server_name ptg.life www.ptg.life noval.ptg.life prompt.ptg.life naifu.ptg.life;        return 301 https://$host$request_uri; &#125;server &#123;        listen 443 ssl;        server_name ptg.life www.ptg.life noval.ptg.life prompt.ptg.life naifu.ptg.life;        # 新版的nginx只用listen 443 ssl就行,需要注释        # ssl on;        keepalive_timeout 10m;        server_tokens off;        # 缓存SSL握手产生的参数和加密密钥的时长        ssl_session_timeout 10m;        # 证书        ssl_certificate /etc/nginx/certificate.crt;        ssl_certificate_key /etc/nginx/private.key;        # 日志        access_log /var/log/nginx/nginx.vhost.access.log;        error_log /var/log/nginx/nginx.vhost.error.log;        # 根用iframe嵌入做个隐式url        location / &#123;            index index.html index.htm index.html inde.php;            root /usr/share/nginx/html;        &#125;    &#125;</code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> Nginx </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+            <tag> Https </tag>
+            
+        </tags>
       
     </entry>
     
@@ -102,6 +158,12 @@
         <content type="html"><![CDATA[<h3 id="apt安装sudo-apt-update"><a href="#apt安装sudo-apt-update" class="headerlink" title="apt安装sudo apt update"></a><strong>apt安装</strong>sudo apt update</h3><pre><code class="jsx">sudo apt install nginxnginx -V默认安装路径 /etc/nginx/nginx.conf</code></pre><h3 id="nginx安装位置"><a href="#nginx安装位置" class="headerlink" title="nginx安装位置"></a><strong>nginx安装位置</strong></h3><pre><code class="jsx">**whereis nginx**</code></pre><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a><strong>启动</strong></h3><pre><code class="jsx">service nginx start</code></pre><h3 id="检查nginx配置文件"><a href="#检查nginx配置文件" class="headerlink" title="检查nginx配置文件"></a><strong>检查nginx配置文件</strong></h3><pre><code class="jsx">service nginx reload</code></pre><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a><strong>重启</strong></h3><pre><code class="jsx">nginx -s reopen</code></pre><h3 id="停止"><a href="#停止" class="headerlink" title="停止"></a><strong>停止</strong></h3><pre><code class="jsx">nginx -s stop</code></pre><h3 id="端口占用"><a href="#端口占用" class="headerlink" title="端口占用"></a>端口占用</h3><pre><code class="jsx">查看端口netstat -lntpnginx端口tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      248057/nginx: master结束端口kill 248057重启nginxservice nginx restart</code></pre>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
       
     </entry>
     
@@ -118,7 +180,7 @@
       
         <tags>
             
-            <tag> react </tag>
+            <tag> React </tag>
             
         </tags>
       

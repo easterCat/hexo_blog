@@ -1,11 +1,12 @@
 ---
 title: Nginx配置
 date: 2023-01-11 12:05:22
-tags:
+tags: Nginx
+categories: Nginx
 ---
 
 
-### nginx配置
+## nginx配置
 
 ```js
 user www-data;
