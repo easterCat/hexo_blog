@@ -6,7 +6,7 @@
         "version": "6.3.0"
     },
     "scripts": {
-        "deploy": "hexo generate && hexo deploy",
+        "deploy": "hexo clean && hexo generate && hexo deploy",
         "push": "git add . && git commit -m 'fast commit' && git push origin main -f",
         "preview": "hexo clean && hexo generate && hexo server"
     },
