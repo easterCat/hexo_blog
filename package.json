@@ -7,7 +7,7 @@
     },
     "scripts": {
         "deploy": "hexo generate && hexo deploy",
-        "push": "git add . && git commit -m 'fast commit' && git push origin main",
+        "push": "git add . && git commit -m 'fast commit' && git push origin main -f",
         "preview": "hexo clean && hexo generate && hexo server"
     },
     "dependencies": {
