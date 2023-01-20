@@ -2,81 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        name="viewport"
+    />
 
     <!-- title -->
     
-        <title>
-            
-                Mysql的processlist中处理表连接 |
-                    
-                        Hexo
-        </title>
+    <title> Mysql的processlist中处理表连接 |  Hexo</title>
 
-        <!-- keywords,description -->
-        
-                    
+    <!-- keywords,description -->
+     
 
-                                <!-- favicon -->
-                                
-                                    <link rel="shortcut icon" href="/favicon.ico">
-                                        
+    <!-- favicon -->
+     <link rel="shortcut icon" href="/favicon.ico"> 
 
+    <!-- search -->
+    <script>
+        var searchEngine = "https://www.google.com/search?q=";
+        if (
+            typeof searchEngine == "undefined" ||
+            searchEngine == null ||
+            searchEngine == ""
+        ) {
+            searchEngine = "https://www.google.com/search?q=";
+        }
+        var homeHost = "wujun234.github.io";
+        if (
+            typeof homeHost == "undefined" ||
+            homeHost == null ||
+            homeHost == ""
+        ) {
+            homeHost = window.location.host;
+        }
+    </script>
 
-                                            <!-- search -->
-                                            <script>
-                                                var searchEngine = "https://www.google.com/search?q=";
-                                                if (typeof searchEngine == "undefined" || searchEngine == null || searchEngine == "") {
-                                                    searchEngine = "https://www.google.com/search?q=";
-                                                }
-                                                var homeHost = "wujun234.github.io";
-                                                if (typeof homeHost == "undefined" || homeHost == null || homeHost == "") {
-                                                    homeHost = window.location.host;
-                                                }
-                                            </script>
-
-
-                                            
+    
 <link rel="stylesheet" href="/css/main.css">
-
-                                                
+ 
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
-
-                                                    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/atom-one-dark.min.css">
-
-                                                        
+ 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.17.1/styles/monokai.css">
+ 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-
-
-                                                            
+ 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
-                                                                
+    
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-                                                                    
+ 
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
-
-                                                                        
+ 
 <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 
-                                                                            
+    
 <script src="/js/main.js"></script>
-
-                                                                                
-                                                                                    
+  
 <script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-
-                                                                                        
+ 
 <script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
-
-                                                                                            
-                                                                                                
-                                                                                                    <script async
-                                                                                                        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                                                                                                    
+  
+    <script
+        async
+        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+    
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
@@ -232,90 +223,84 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	Mysql的processlist中处理表连接
+    Mysql的processlist中处理表连接
 </h1>
 <div class="article-meta">
-	
-	<span>easterCat</span>
-	<span>2023-01-16 16:22:53</span>
-		<div id="article-categories">
     
-		<span>Categories：</span>
-            
-    
-
-    
-		<span>Tags：</span>
-            
-    
-		</div>
-
-</div>
-
-<div id="article-content">
-	<h2 id="processlist中大量sleep"><a href="#processlist中大量sleep" class="headerlink" title="processlist中大量sleep"></a>processlist中大量sleep</h2><p>在生产环境切换mysql数据库，切换后数据库连接池爆满，抛出异常“too many connections”；</p>
-<p>出现这种现象，比较常见的原因是连接数真不够了，需要设置连接数：</p>
-<h3 id="连接数不够解决"><a href="#连接数不够解决" class="headerlink" title="连接数不够解决"></a>连接数不够解决</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p;</span><br><span class="line">show full processlist;</span><br><span class="line">kill id;</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看最大连接数"><a href="#查看最大连接数" class="headerlink" title="查看最大连接数"></a>查看最大连接数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like <span class="string">&quot;max_connections&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>查看最大连接数，应该是与上面查询到的连接数相同，才会出现too many connections的情况</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set <span class="variable constant_">GLOBAL</span> max_connections=<span class="number">1000</span>;</span><br></pre></td></tr></table></figure>
-
-<p>修改最大连接数，但是这不是一劳永逸的方法，应该要让它自动杀死那些sleep的进程。</p>
-<h3 id="自动杀死那些sleep的进程"><a href="#自动杀死那些sleep的进程" class="headerlink" title="自动杀死那些sleep的进程"></a>自动杀死那些sleep的进程</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show <span class="variable language_">global</span> variables like <span class="string">&#x27;wait_timeout&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>这个数值指的是mysql在关闭一个非交互的连接之前要等待的秒数，默认是28800s</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set <span class="variable language_">global</span> wait_timeout=<span class="number">300</span>; </span><br></pre></td></tr></table></figure>
-
-<p>修改这个数值，这里可以随意，最好控制在几分钟内</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set <span class="variable language_">global</span> interactive_timeout=<span class="number">500</span>; </span><br></pre></td></tr></table></figure>
-
-<p>修改这个数值，表示mysql在关闭一个连接之前要等待的秒数，至此可以让mysql自动关闭那些没用的连接，但要注意的是，正在使用的连接到了时间也会被关闭，因此这个时间值要合适</p>
-<h3 id="笨方法"><a href="#笨方法" class="headerlink" title="笨方法"></a>笨方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select <span class="title function_">concat</span>(<span class="string">&#x27;KILL &#x27;</span>,id,<span class="string">&#x27;;&#x27;</span>) <span class="keyword">from</span> information_schema.<span class="property">processlist</span> where user=<span class="string">&#x27;root&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>先把要kill的连接id都查询出来,然后一个个kill</p>
-
-</div>
-
-
-    <div class="post-guide">
-        <div class="item left">
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2023/01/12/Flask-sqlalchemy%E4%BD%BF%E7%94%A8/">
-                Flask-sqlalchemy使用
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
+    <span>easterCat</span>
+    <span>2023-01-16 16:22:53</span>
+    <div id="article-categories">
+        
+        <span>Categories：</span>
+          
+        <span>Tags：</span>
+         
     </div>
+</div>
+
+<div id="article-content"><h2 id="processlist中大量sleep"><a href="#processlist中大量sleep" class="headerlink" title="processlist中大量sleep"></a>processlist中大量sleep</h2><p>在生产环境切换mysql数据库，切换后数据库连接池爆满，抛出异常“too many connections”；</p>
+<p>出现这种现象，比较常见的原因是连接数真不够了，需要设置连接数：</p>
+<h3 id="连接数不够解决"><a href="#连接数不够解决" class="headerlink" title="连接数不够解决"></a>连接数不够解决</h3><pre><code class="js">mysql -u root -p;
+show full processlist;
+kill id;
+</code></pre>
+<h3 id="查看最大连接数"><a href="#查看最大连接数" class="headerlink" title="查看最大连接数"></a>查看最大连接数</h3><pre><code class="js">show variables like &quot;max_connections&quot;;
+</code></pre>
+<p>查看最大连接数，应该是与上面查询到的连接数相同，才会出现too many connections的情况</p>
+<pre><code class="js">set GLOBAL max_connections=1000;
+</code></pre>
+<p>修改最大连接数，但是这不是一劳永逸的方法，应该要让它自动杀死那些sleep的进程。</p>
+<h3 id="自动杀死那些sleep的进程"><a href="#自动杀死那些sleep的进程" class="headerlink" title="自动杀死那些sleep的进程"></a>自动杀死那些sleep的进程</h3><pre><code class="js">show global variables like &#39;wait_timeout&#39;;
+</code></pre>
+<p>这个数值指的是mysql在关闭一个非交互的连接之前要等待的秒数，默认是28800s</p>
+<pre><code class="js">set global wait_timeout=300; 
+</code></pre>
+<p>修改这个数值，这里可以随意，最好控制在几分钟内</p>
+<pre><code class="js">set global interactive_timeout=500; 
+</code></pre>
+<p>修改这个数值，表示mysql在关闭一个连接之前要等待的秒数，至此可以让mysql自动关闭那些没用的连接，但要注意的是，正在使用的连接到了时间也会被关闭，因此这个时间值要合适</p>
+<h3 id="笨方法"><a href="#笨方法" class="headerlink" title="笨方法"></a>笨方法</h3><pre><code class="js">select concat(&#39;KILL &#39;,id,&#39;;&#39;) from information_schema.processlist where user=&#39;root&#39;;
+</code></pre>
+<p>先把要kill的连接id都查询出来,然后一个个kill</p>
+</div>
 
 
-
-	<div id="vcomments"></div>
+<div class="post-guide">
+    <div class="item left">
+        
+    </div>
+    <div class="item right">
+        
+        <a href="/2023/01/12/Flask-sqlalchemy%E4%BD%BF%E7%94%A8/">
+            Flask-sqlalchemy使用
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+        
+    </div>
+</div>
+ 
+<div id="vcomments"></div>
 
 
 <script>
-	
-		// 评论
-		new Valine({
-			el: '#vcomments',
-			appId: '',
-			appKey: '',
-			placeholder: '请输入评论',
-			path: window.location.pathname,
-			avatar: 'retro',
-			highlight: false,
-      recordIP: true,
-      enableQQ: true,
-			requiredFields: ['nick','mail']
-		})
-	
-	
+    
+    	// 评论
+    	new Valine({
+    		el: '#vcomments',
+    		appId: '',
+    		appKey: '',
+    		placeholder: '请输入评论',
+    		path: window.location.pathname,
+    		avatar: 'retro',
+    		highlight: false,
+         recordIP: true,
+         enableQQ: true,
+    		requiredFields: ['nick','mail']
+    	})
+    
+    
 </script>
+
 	</div>
 	<div id="footer">
 	<p>

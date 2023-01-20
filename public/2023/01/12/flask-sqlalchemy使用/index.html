@@ -2,81 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        name="viewport"
+    />
 
     <!-- title -->
     
-        <title>
-            
-                Flask-sqlalchemy使用 |
-                    
-                        Hexo
-        </title>
+    <title> Flask-sqlalchemy使用 |  Hexo</title>
 
-        <!-- keywords,description -->
-        
-                    
+    <!-- keywords,description -->
+     
 
-                                <!-- favicon -->
-                                
-                                    <link rel="shortcut icon" href="/favicon.ico">
-                                        
+    <!-- favicon -->
+     <link rel="shortcut icon" href="/favicon.ico"> 
 
+    <!-- search -->
+    <script>
+        var searchEngine = "https://www.google.com/search?q=";
+        if (
+            typeof searchEngine == "undefined" ||
+            searchEngine == null ||
+            searchEngine == ""
+        ) {
+            searchEngine = "https://www.google.com/search?q=";
+        }
+        var homeHost = "wujun234.github.io";
+        if (
+            typeof homeHost == "undefined" ||
+            homeHost == null ||
+            homeHost == ""
+        ) {
+            homeHost = window.location.host;
+        }
+    </script>
 
-                                            <!-- search -->
-                                            <script>
-                                                var searchEngine = "https://www.google.com/search?q=";
-                                                if (typeof searchEngine == "undefined" || searchEngine == null || searchEngine == "") {
-                                                    searchEngine = "https://www.google.com/search?q=";
-                                                }
-                                                var homeHost = "wujun234.github.io";
-                                                if (typeof homeHost == "undefined" || homeHost == null || homeHost == "") {
-                                                    homeHost = window.location.host;
-                                                }
-                                            </script>
-
-
-                                            
+    
 <link rel="stylesheet" href="/css/main.css">
-
-                                                
+ 
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
-
-                                                    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/atom-one-dark.min.css">
-
-                                                        
+ 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.17.1/styles/monokai.css">
+ 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-
-
-                                                            
+ 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
-                                                                
+    
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-                                                                    
+ 
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
-
-                                                                        
+ 
 <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 
-                                                                            
+    
 <script src="/js/main.js"></script>
-
-                                                                                
-                                                                                    
+  
 <script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-
-                                                                                        
+ 
 <script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
-
-                                                                                            
-                                                                                                
-                                                                                                    <script async
-                                                                                                        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                                                                                                    
+  
+    <script
+        async
+        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+    
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
@@ -232,76 +223,161 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	Flask-sqlalchemy使用
+    Flask-sqlalchemy使用
 </h1>
 <div class="article-meta">
-	
-	<span>easterCat</span>
-	<span>2023-01-12 15:48:11</span>
-		<div id="article-categories">
     
-		<span>Categories：</span>
-            
-    
-
-    
-		<span>Tags：</span>
-            
-    
-		</div>
-
-</div>
-
-<div id="article-content">
-	<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>  <span class="title function_">filter</span>()    把过滤器添加到原查询上，返回一个新查询</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>  <span class="title function_">filter_by</span>()    把等值过滤器添加到原查询上，返回一个新查询</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>  limit    使用指定的值限定原查询返回的结果</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>  <span class="title function_">offset</span>()    偏移原查询返回的结果，返回一个新查询</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>  <span class="title function_">order_by</span>()    根据指定条件对原查询结果进行排序，返回一个新查询</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span>  <span class="title function_">group_by</span>()    根据指定条件对原查询结果进行分组，返回一个新查询</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span>  <span class="title function_">all</span>()    以列表形式返回查询的所有结果</span><br><span class="line"></span><br><span class="line"><span class="number">8.</span>  <span class="title function_">first</span>()    返回查询的第一个结果，如果未查到，返回 <span class="title class_">None</span></span><br><span class="line"></span><br><span class="line"><span class="number">9.</span>  <span class="title function_">first_or_404</span>()    返回查询的第一个结果，如果未查到，返回 <span class="number">404</span></span><br><span class="line"></span><br><span class="line"><span class="number">10.</span>  <span class="title function_">get</span>()    返回指定主键对应的行，如不存在，返回 <span class="title class_">None</span></span><br><span class="line"></span><br><span class="line"><span class="number">11.</span>  <span class="title function_">get_or_404</span>()    返回指定主键对应的行，如不存在，返回 <span class="number">404</span></span><br><span class="line"></span><br><span class="line"><span class="number">12.</span>  <span class="title function_">count</span>()    返回查询结果的数量</span><br><span class="line"></span><br><span class="line"><span class="number">13.</span>  <span class="title function_">paginate</span>()    返回一个<span class="title class_">Paginate</span>对象，它包含指定范围内的结果</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>  <span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2.  查询所有用户数据</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3.  User.query.all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">5.  查询有多少个用户</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">6.  User.query.count()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">8.  查询第1个用户</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">9.  User.query.first()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">10.  User.query.get(1) # 根据id查询</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">12.  查询id为4的用户[3种方式]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">13.  User.query.get(4)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">14.  User.query.filter_by(id=4).all() # 简单查询 使用关键字实参的形式来设置字段名</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">15.  User.query.filter(User.id == 4).all() # 复杂查询 使用恒等式等其他形式来设置条件</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">17.  查询名字结尾字符为g的所有用户[开始 / 包含]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">18.  User.query.filter(User.name.endswith(&quot;</span>g<span class="string">&quot;)).all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">19.  User.query.filter(User.name.startswith(&quot;</span>w<span class="string">&quot;)).all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">20.  User.query.filter(User.name.contains(&quot;</span>n<span class="string">&quot;)).all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">21.  User.query.filter(User.name.like(&quot;</span>%n%g<span class="string">&quot;)).all() 模糊查询</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">23.  查询名字和邮箱都以li开头的所有用户[2种方式]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">24.  User.query.filter(User.name.startswith(&quot;</span>li<span class="string">&quot;), User.email.startswith(&quot;</span>li<span class="string">&quot;)).all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">26.  from sqlalchemy import and_</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">27.  User.query.filter(and_(User.name.startswith(&quot;</span>li<span class="string">&quot;), User.email.startswith(&quot;</span>li<span class="string">&quot;))).all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">29.  查询age是25 或者 \`email\`以\`itheima.com\`结尾的所有用户</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">30.  from sqlalchemy import or_</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">31.  User.query.filter(or_(User.age == 25, User.email.endswith(&quot;</span>itheima.<span class="property">com</span><span class="string">&quot;))).all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">33.  查询名字不等于wang的所有用户[2种方式]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">34.  from sqlalchemy import not_</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">35.  User.query.filter(not_(User.name == &quot;</span>wang<span class="string">&quot;)).all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">36.  User.query.filter(User.name != &quot;</span>wang<span class="string">&quot;).all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">38.  查询id为[1, 3, 5, 7, 9]的用户</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">39.  User.query.filter(User.id.in_([1, 3, 5, 7, 9])).all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">41.  所有用户先按年龄从小到大, 再按id从大到小排序, 取前5个</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">42.  User.query.order_by(User.age, User.id.desc()).limit(5).all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">44.  分页查询, 每页3个, 查询第2页的数据</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">45.  pn = User.query.paginate(2, 3)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">46.  pn.items 获取该页的数据 pn.page 获取当前的页码 pn.pages 获取总页数</span></span><br></pre></td></tr></table></figure>
-
-</div>
-
-
-    <div class="post-guide">
-        <div class="item left">
-            
-              <a href="/2023/01/16/Mysql%E7%9A%84processlist%E4%B8%AD%E5%A4%84%E7%90%86%E8%A1%A8%E8%BF%9E%E6%8E%A5/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Mysql的processlist中处理表连接
-              </a>
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2023/01/11/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8/">
-                Git常用命令的使用
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
+    <span>easterCat</span>
+    <span>2023-01-12 15:48:11</span>
+    <div id="article-categories">
+        
+        <span>Categories：</span>
+          
+        <span>Tags：</span>
+         
     </div>
+</div>
+
+<div id="article-content"><h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><pre><code class="js">1.  filter()    把过滤器添加到原查询上，返回一个新查询
+
+2.  filter_by()    把等值过滤器添加到原查询上，返回一个新查询
+
+3.  limit    使用指定的值限定原查询返回的结果
+
+4.  offset()    偏移原查询返回的结果，返回一个新查询
+
+5.  order_by()    根据指定条件对原查询结果进行排序，返回一个新查询
+
+6.  group_by()    根据指定条件对原查询结果进行分组，返回一个新查询
+
+7.  all()    以列表形式返回查询的所有结果
+
+8.  first()    返回查询的第一个结果，如果未查到，返回 None
+
+9.  first_or_404()    返回查询的第一个结果，如果未查到，返回 404
+
+10.  get()    返回指定主键对应的行，如不存在，返回 None
+
+11.  get_or_404()    返回指定主键对应的行，如不存在，返回 404
+
+12.  count()    返回查询结果的数量
+
+13.  paginate()    返回一个Paginate对象，它包含指定范围内的结果
+</code></pre>
+<pre><code class="js">1.  &quot;&quot;&quot;
+
+2.  查询所有用户数据
+
+3.  User.query.all()
+
+5.  查询有多少个用户
+
+6.  User.query.count()
+
+8.  查询第1个用户
+
+9.  User.query.first()
+
+10.  User.query.get(1) # 根据id查询
+
+12.  查询id为4的用户[3种方式]
+
+13.  User.query.get(4)
+
+14.  User.query.filter_by(id=4).all() # 简单查询 使用关键字实参的形式来设置字段名
+
+15.  User.query.filter(User.id == 4).all() # 复杂查询 使用恒等式等其他形式来设置条件
+
+17.  查询名字结尾字符为g的所有用户[开始 / 包含]
+
+18.  User.query.filter(User.name.endswith(&quot;g&quot;)).all()
+
+19.  User.query.filter(User.name.startswith(&quot;w&quot;)).all()
+
+20.  User.query.filter(User.name.contains(&quot;n&quot;)).all()
+
+21.  User.query.filter(User.name.like(&quot;%n%g&quot;)).all() 模糊查询
+
+23.  查询名字和邮箱都以li开头的所有用户[2种方式]
+
+24.  User.query.filter(User.name.startswith(&quot;li&quot;), User.email.startswith(&quot;li&quot;)).all()
+
+26.  from sqlalchemy import and_
+
+27.  User.query.filter(and_(User.name.startswith(&quot;li&quot;), User.email.startswith(&quot;li&quot;))).all()
+
+29.  查询age是25 或者 \`email\`以\`itheima.com\`结尾的所有用户
+
+30.  from sqlalchemy import or_
+
+31.  User.query.filter(or_(User.age == 25, User.email.endswith(&quot;itheima.com&quot;))).all()
+
+33.  查询名字不等于wang的所有用户[2种方式]
+
+34.  from sqlalchemy import not_
+
+35.  User.query.filter(not_(User.name == &quot;wang&quot;)).all()
+
+36.  User.query.filter(User.name != &quot;wang&quot;).all()
+
+38.  查询id为[1, 3, 5, 7, 9]的用户
+
+39.  User.query.filter(User.id.in_([1, 3, 5, 7, 9])).all()
+
+41.  所有用户先按年龄从小到大, 再按id从大到小排序, 取前5个
+
+42.  User.query.order_by(User.age, User.id.desc()).limit(5).all()
+
+44.  分页查询, 每页3个, 查询第2页的数据
+
+45.  pn = User.query.paginate(2, 3)
+
+46.  pn.items 获取该页的数据 pn.page 获取当前的页码 pn.pages 获取总页数
+</code></pre>
+</div>
 
 
-
-	<div id="vcomments"></div>
+<div class="post-guide">
+    <div class="item left">
+        
+        <a href="/2023/01/16/Mysql%E7%9A%84processlist%E4%B8%AD%E5%A4%84%E7%90%86%E8%A1%A8%E8%BF%9E%E6%8E%A5/">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            Mysql的processlist中处理表连接
+        </a>
+        
+    </div>
+    <div class="item right">
+        
+        <a href="/2023/01/11/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8/">
+            Git常用命令的使用
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+        
+    </div>
+</div>
+ 
+<div id="vcomments"></div>
 
 
 <script>
-	
-		// 评论
-		new Valine({
-			el: '#vcomments',
-			appId: '',
-			appKey: '',
-			placeholder: '请输入评论',
-			path: window.location.pathname,
-			avatar: 'retro',
-			highlight: false,
-      recordIP: true,
-      enableQQ: true,
-			requiredFields: ['nick','mail']
-		})
-	
-	
+    
+    	// 评论
+    	new Valine({
+    		el: '#vcomments',
+    		appId: '',
+    		appKey: '',
+    		placeholder: '请输入评论',
+    		path: window.location.pathname,
+    		avatar: 'retro',
+    		highlight: false,
+         recordIP: true,
+         enableQQ: true,
+    		requiredFields: ['nick','mail']
+    	})
+    
+    
 </script>
+
 	</div>
 	<div id="footer">
 	<p>

@@ -2,79 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        name="viewport"
+    />
 
     <!-- title -->
     
-        <title>
-            
-                        Hexo
-        </title>
+    <title> Hexo</title>
 
-        <!-- keywords,description -->
-        
-                    
+    <!-- keywords,description -->
+     
 
-                                <!-- favicon -->
-                                
-                                    <link rel="shortcut icon" href="/favicon.ico">
-                                        
+    <!-- favicon -->
+     <link rel="shortcut icon" href="/favicon.ico"> 
 
+    <!-- search -->
+    <script>
+        var searchEngine = "https://www.google.com/search?q=";
+        if (
+            typeof searchEngine == "undefined" ||
+            searchEngine == null ||
+            searchEngine == ""
+        ) {
+            searchEngine = "https://www.google.com/search?q=";
+        }
+        var homeHost = "wujun234.github.io";
+        if (
+            typeof homeHost == "undefined" ||
+            homeHost == null ||
+            homeHost == ""
+        ) {
+            homeHost = window.location.host;
+        }
+    </script>
 
-                                            <!-- search -->
-                                            <script>
-                                                var searchEngine = "https://www.google.com/search?q=";
-                                                if (typeof searchEngine == "undefined" || searchEngine == null || searchEngine == "") {
-                                                    searchEngine = "https://www.google.com/search?q=";
-                                                }
-                                                var homeHost = "wujun234.github.io";
-                                                if (typeof homeHost == "undefined" || homeHost == null || homeHost == "") {
-                                                    homeHost = window.location.host;
-                                                }
-                                            </script>
-
-
-                                            
+    
 <link rel="stylesheet" href="/css/main.css">
-
-                                                
+ 
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
-
-                                                    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/atom-one-dark.min.css">
-
-                                                        
+ 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.17.1/styles/monokai.css">
+ 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-
-
-                                                            
+ 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
-                                                                
+    
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-                                                                    
+ 
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
-
-                                                                        
+ 
 <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 
-                                                                            
+    
 <script src="/js/main.js"></script>
-
-                                                                                
-                                                                                    
+  
 <script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-
-                                                                                        
+ 
 <script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
-
-                                                                                            
-                                                                                                
-                                                                                                    <script async
-                                                                                                        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                                                                                                    
+  
+    <script
+        async
+        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+    
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
@@ -239,7 +232,8 @@ var _hmt = _hmt || [];
 				<div class="index-brief">
 					processlist中大量sleep在生产环境切换mysql数据库，切换后数据库连接池爆满，抛出异常“too many connections”；
 出现这种现象，比较常见的原因是连接数真不够了，需要设置连接数：
-连接数不够解决123mysql -u root -p;show full proces
+连接数不够解决mysql -u root -p;
+show full processl
 					...
 				</div>
 			</a>
@@ -257,7 +251,15 @@ var _hmt = _hmt || [];
 					Flask-sqlalchemy使用
 				</h2>
 				<div class="index-brief">
-					查询123456789101112131415161718192021222324251.  filter()    把过滤器添加到原查询上，返回一个新查询2.  filter_by()    把等值过滤器添加到原查询上，返回一个新查询3.  limit    使用指定的值限定原查询返回的结果4. 
+					查询1.  filter()    把过滤器添加到原查询上，返回一个新查询
+
+2.  filter_by()    把等值过滤器添加到原查询上，返回一个新查询
+
+3.  limit    使用指定的值限定原查询返回的结果
+
+4.  offset()    偏移原查询返回的结果，返回一个新查询
+
+5.
 					...
 				</div>
 			</a>
@@ -343,7 +345,14 @@ SEO要点：
 					Nginx配置
 				</h2>
 				<div class="index-brief">
-					nginx配置12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576
+					nginx配置user www-data;
+#启动进程,通常设置成和cpu的数量相等
+worker_processes 2;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events &#123;
+    worke
 					...
 				</div>
 			</a>
@@ -379,13 +388,17 @@ SEO要点：
 					Ubuntu18安装nginx
 				</h2>
 				<div class="index-brief">
-					apt安装sudo apt update12345sudo apt install nginxnginx -V默认安装路径 /etc/nginx/nginx.conf
+					apt安装sudo apt updatesudo apt install nginx
 
-nginx安装位置1**whereis nginx**
+nginx -V
 
-启动1service nginx start
+默认安装路径 /etc/nginx/nginx.conf
 
-检查nginx配置文件1
+nginx安装位置**whereis nginx**
+
+启动service nginx start
+
+检查nginx配置文件serv
 					...
 				</div>
 			</a>

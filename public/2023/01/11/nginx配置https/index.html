@@ -2,81 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        name="viewport"
+    />
 
     <!-- title -->
     
-        <title>
-            
-                Nginx配置https |
-                    
-                        Hexo
-        </title>
+    <title> Nginx配置https |  Hexo</title>
 
-        <!-- keywords,description -->
-        
-                    
+    <!-- keywords,description -->
+     
 
-                                <!-- favicon -->
-                                
-                                    <link rel="shortcut icon" href="/favicon.ico">
-                                        
+    <!-- favicon -->
+     <link rel="shortcut icon" href="/favicon.ico"> 
 
+    <!-- search -->
+    <script>
+        var searchEngine = "https://www.google.com/search?q=";
+        if (
+            typeof searchEngine == "undefined" ||
+            searchEngine == null ||
+            searchEngine == ""
+        ) {
+            searchEngine = "https://www.google.com/search?q=";
+        }
+        var homeHost = "wujun234.github.io";
+        if (
+            typeof homeHost == "undefined" ||
+            homeHost == null ||
+            homeHost == ""
+        ) {
+            homeHost = window.location.host;
+        }
+    </script>
 
-                                            <!-- search -->
-                                            <script>
-                                                var searchEngine = "https://www.google.com/search?q=";
-                                                if (typeof searchEngine == "undefined" || searchEngine == null || searchEngine == "") {
-                                                    searchEngine = "https://www.google.com/search?q=";
-                                                }
-                                                var homeHost = "wujun234.github.io";
-                                                if (typeof homeHost == "undefined" || homeHost == null || homeHost == "") {
-                                                    homeHost = window.location.host;
-                                                }
-                                            </script>
-
-
-                                            
+    
 <link rel="stylesheet" href="/css/main.css">
-
-                                                
+ 
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
-
-                                                    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/atom-one-dark.min.css">
-
-                                                        
+ 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.17.1/styles/monokai.css">
+ 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-
-
-                                                            
+ 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
-                                                                
+    
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-                                                                    
+ 
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
-
-                                                                        
+ 
 <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 
-                                                                            
+    
 <script src="/js/main.js"></script>
-
-                                                                                
-                                                                                    
+  
 <script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-
-                                                                                        
+ 
 <script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
-
-                                                                                            
-                                                                                                
-                                                                                                    <script async
-                                                                                                        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                                                                                                    
+  
+    <script
+        async
+        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+    
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
@@ -232,82 +223,106 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	Nginx配置https
+    Nginx配置https
 </h1>
 <div class="article-meta">
-	
-	<span>easterCat</span>
-	<span>2023-01-11 12:04:52</span>
-		<div id="article-categories">
     
-		<span>Categories：</span>
-            
-    
-
-    
-		<span>Tags：</span>
-            
-    
-		</div>
-
-</div>
-
-<div id="article-content">
-	<h2 id="SSL-证书部署"><a href="#SSL-证书部署" class="headerlink" title="SSL 证书部署"></a><strong><strong>SSL 证书部署</strong></strong></h2><p>首先申请免费证书,推荐阿里或者七牛云<a target="_blank" rel="noopener" href="https://cn.aliyun.com/product/cas?from_alibabacloud=&source=5176.11533457&userCode=ywqc0ubl&type=copy">https://cn.aliyun.com/product/cas?from_alibabacloud&#x3D;&amp;source&#x3D;5176.11533457&amp;userCode&#x3D;ywqc0ubl&amp;type&#x3D;copy</a></p>
-<p>下载申请好的 ssl 证书文件压缩包到本地并解压到&#x2F;etc&#x2F;nginx&#x2F;</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/nginx/certificate.<span class="property">crt</span>;</span><br><span class="line"><span class="regexp">/etc/</span>nginx/private.<span class="property">key</span>;</span><br></pre></td></tr></table></figure>
-
-<p>将这两个文件上传至服务器的&#x2F;etc&#x2F;nginx&#x2F;目录里</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp /<span class="title class_">Users</span>/lilin/<span class="title class_">Downloads</span>/certificate.<span class="property">crt</span> root@xxx.<span class="property">xx</span>.<span class="property">xxx</span>.<span class="property">xx</span>:<span class="regexp">/etc/</span>nginx/</span><br><span class="line">scp /<span class="title class_">Users</span>/lilin/<span class="title class_">Downloads</span>/private.<span class="property">crt</span> root@xxx.<span class="property">xx</span>.<span class="property">xxx</span>.<span class="property">xx</span>:<span class="regexp">/etc/</span>nginx/</span><br></pre></td></tr></table></figure>
-
-<h2 id="nginx-conf配置"><a href="#nginx-conf配置" class="headerlink" title="nginx.conf配置"></a>nginx.conf配置</h2><p>配置 https <a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=j1N+5oPWtgTmj4YYsFd5ww==.x32KBqxEXmGOwmMZfGjqRXhbghKgM1LsJhVbG+8iji5BQ1P9tGkbxC2u/dahY+V6">server</a>.注释掉之前的 http server 配置,新增 https server</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">将http重定向https</span><br><span class="line">server &#123;</span><br><span class="line">        listen <span class="number">80</span>;</span><br><span class="line">        server_name ptg.<span class="property">life</span> www.<span class="property">ptg</span>.<span class="property">life</span> noval.<span class="property">ptg</span>.<span class="property">life</span> prompt.<span class="property">ptg</span>.<span class="property">life</span> naifu.<span class="property">ptg</span>.<span class="property">life</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">301</span> <span class="attr">https</span>:<span class="comment">//$host$request_uri;</span></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">        listen <span class="number">443</span> ssl;</span><br><span class="line">        server_name ptg.<span class="property">life</span> www.<span class="property">ptg</span>.<span class="property">life</span> noval.<span class="property">ptg</span>.<span class="property">life</span> prompt.<span class="property">ptg</span>.<span class="property">life</span> naifu.<span class="property">ptg</span>.<span class="property">life</span>;</span><br><span class="line"></span><br><span class="line">        # 新版的nginx只用listen <span class="number">443</span> ssl就行,需要注释</span><br><span class="line">        # ssl on;</span><br><span class="line">        keepalive_timeout 10m;</span><br><span class="line">        server_tokens off;</span><br><span class="line">        # 缓存<span class="variable constant_">SSL</span>握手产生的参数和加密密钥的时长</span><br><span class="line">        ssl_session_timeout 10m;</span><br><span class="line">        # 证书</span><br><span class="line">        ssl_certificate /etc/nginx/certificate.<span class="property">crt</span>;</span><br><span class="line">        ssl_certificate_key /etc/nginx/private.<span class="property">key</span>;</span><br><span class="line">        # 日志</span><br><span class="line">        access_log /<span class="keyword">var</span>/log/nginx/nginx.<span class="property">vhost</span>.<span class="property">access</span>.<span class="property">log</span>;</span><br><span class="line">        error_log /<span class="keyword">var</span>/log/nginx/nginx.<span class="property">vhost</span>.<span class="property">error</span>.<span class="property">log</span>;</span><br><span class="line"></span><br><span class="line">        # 根用iframe嵌入做个隐式url</span><br><span class="line">        location / &#123;</span><br><span class="line">            index index.<span class="property">html</span> index.<span class="property">htm</span> index.<span class="property">html</span> inde.<span class="property">php</span>;</span><br><span class="line">            root /usr/share/nginx/html;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-</div>
-
-
-    <div class="post-guide">
-        <div class="item left">
-            
-              <a href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AE/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Nginx配置
-              </a>
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2023/01/11/Ubuntu18%E5%AE%89%E8%A3%85nginx/">
-                Ubuntu18安装nginx
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
+    <span>easterCat</span>
+    <span>2023-01-11 12:04:52</span>
+    <div id="article-categories">
+        
+        <span>Categories：</span>
+          
+        <span>Tags：</span>
+         
     </div>
+</div>
+
+<div id="article-content"><h2 id="SSL-证书部署"><a href="#SSL-证书部署" class="headerlink" title="SSL 证书部署"></a><strong><strong>SSL 证书部署</strong></strong></h2><p>首先申请免费证书,推荐阿里或者七牛云<a target="_blank" rel="noopener" href="https://cn.aliyun.com/product/cas?from_alibabacloud=&source=5176.11533457&userCode=ywqc0ubl&type=copy">https://cn.aliyun.com/product/cas?from_alibabacloud&#x3D;&amp;source&#x3D;5176.11533457&amp;userCode&#x3D;ywqc0ubl&amp;type&#x3D;copy</a></p>
+<p>下载申请好的 ssl 证书文件压缩包到本地并解压到&#x2F;etc&#x2F;nginx&#x2F;</p>
+<pre><code class="jsx">/etc/nginx/certificate.crt;
+/etc/nginx/private.key;
+</code></pre>
+<p>将这两个文件上传至服务器的&#x2F;etc&#x2F;nginx&#x2F;目录里</p>
+<pre><code class="jsx">scp /Users/lilin/Downloads/certificate.crt root@xxx.xx.xxx.xx:/etc/nginx/
+scp /Users/lilin/Downloads/private.crt root@xxx.xx.xxx.xx:/etc/nginx/
+</code></pre>
+<h2 id="nginx-conf配置"><a href="#nginx-conf配置" class="headerlink" title="nginx.conf配置"></a>nginx.conf配置</h2><p>配置 https <a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=j1N+5oPWtgTmj4YYsFd5ww==.x32KBqxEXmGOwmMZfGjqRXhbghKgM1LsJhVbG+8iji5BQ1P9tGkbxC2u/dahY+V6">server</a>.注释掉之前的 http server 配置,新增 https server</p>
+<pre><code class="jsx">将http重定向https
+server &#123;
+        listen 80;
+        server_name ptg.life www.ptg.life noval.ptg.life prompt.ptg.life naifu.ptg.life;
+        return 301 https://$host$request_uri;
+ &#125;
+
+server &#123;
+        listen 443 ssl;
+        server_name ptg.life www.ptg.life noval.ptg.life prompt.ptg.life naifu.ptg.life;
+
+        # 新版的nginx只用listen 443 ssl就行,需要注释
+        # ssl on;
+        keepalive_timeout 10m;
+        server_tokens off;
+        # 缓存SSL握手产生的参数和加密密钥的时长
+        ssl_session_timeout 10m;
+        # 证书
+        ssl_certificate /etc/nginx/certificate.crt;
+        ssl_certificate_key /etc/nginx/private.key;
+        # 日志
+        access_log /var/log/nginx/nginx.vhost.access.log;
+        error_log /var/log/nginx/nginx.vhost.error.log;
+
+        # 根用iframe嵌入做个隐式url
+        location / &#123;
+            index index.html index.htm index.html inde.php;
+            root /usr/share/nginx/html;
+        &#125;
+    &#125;
+</code></pre>
+</div>
 
 
-
-	<div id="vcomments"></div>
+<div class="post-guide">
+    <div class="item left">
+        
+        <a href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AE/">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            Nginx配置
+        </a>
+        
+    </div>
+    <div class="item right">
+        
+        <a href="/2023/01/11/Ubuntu18%E5%AE%89%E8%A3%85nginx/">
+            Ubuntu18安装nginx
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+        
+    </div>
+</div>
+ 
+<div id="vcomments"></div>
 
 
 <script>
-	
-		// 评论
-		new Valine({
-			el: '#vcomments',
-			appId: '',
-			appKey: '',
-			placeholder: '请输入评论',
-			path: window.location.pathname,
-			avatar: 'retro',
-			highlight: false,
-      recordIP: true,
-      enableQQ: true,
-			requiredFields: ['nick','mail']
-		})
-	
-	
+    
+    	// 评论
+    	new Valine({
+    		el: '#vcomments',
+    		appId: '',
+    		appKey: '',
+    		placeholder: '请输入评论',
+    		path: window.location.pathname,
+    		avatar: 'retro',
+    		highlight: false,
+         recordIP: true,
+         enableQQ: true,
+    		requiredFields: ['nick','mail']
+    	})
+    
+    
 </script>
+
 	</div>
 	<div id="footer">
 	<p>

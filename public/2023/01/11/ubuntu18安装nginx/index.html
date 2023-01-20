@@ -2,81 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        name="viewport"
+    />
 
     <!-- title -->
     
-        <title>
-            
-                Ubuntu18安装nginx |
-                    
-                        Hexo
-        </title>
+    <title> Ubuntu18安装nginx |  Hexo</title>
 
-        <!-- keywords,description -->
-        
-                    
+    <!-- keywords,description -->
+     
 
-                                <!-- favicon -->
-                                
-                                    <link rel="shortcut icon" href="/favicon.ico">
-                                        
+    <!-- favicon -->
+     <link rel="shortcut icon" href="/favicon.ico"> 
 
+    <!-- search -->
+    <script>
+        var searchEngine = "https://www.google.com/search?q=";
+        if (
+            typeof searchEngine == "undefined" ||
+            searchEngine == null ||
+            searchEngine == ""
+        ) {
+            searchEngine = "https://www.google.com/search?q=";
+        }
+        var homeHost = "wujun234.github.io";
+        if (
+            typeof homeHost == "undefined" ||
+            homeHost == null ||
+            homeHost == ""
+        ) {
+            homeHost = window.location.host;
+        }
+    </script>
 
-                                            <!-- search -->
-                                            <script>
-                                                var searchEngine = "https://www.google.com/search?q=";
-                                                if (typeof searchEngine == "undefined" || searchEngine == null || searchEngine == "") {
-                                                    searchEngine = "https://www.google.com/search?q=";
-                                                }
-                                                var homeHost = "wujun234.github.io";
-                                                if (typeof homeHost == "undefined" || homeHost == null || homeHost == "") {
-                                                    homeHost = window.location.host;
-                                                }
-                                            </script>
-
-
-                                            
+    
 <link rel="stylesheet" href="/css/main.css">
-
-                                                
+ 
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
-
-                                                    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/atom-one-dark.min.css">
-
-                                                        
+ 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.17.1/styles/monokai.css">
+ 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-
-
-                                                            
+ 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
-                                                                
+    
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-                                                                    
+ 
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
-
-                                                                        
+ 
 <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 
-                                                                            
+    
 <script src="/js/main.js"></script>
-
-                                                                                
-                                                                                    
+  
 <script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-
-                                                                                        
+ 
 <script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
-
-                                                                                            
-                                                                                                
-                                                                                                    <script async
-                                                                                                        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                                                                                                    
+  
+    <script
+        async
+        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+    
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
@@ -232,86 +223,93 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	Ubuntu18安装nginx
+    Ubuntu18安装nginx
 </h1>
 <div class="article-meta">
-	
-	<span>easterCat</span>
-	<span>2023-01-11 12:04:03</span>
-		<div id="article-categories">
     
-		<span>Categories：</span>
-            
-    
-
-    
-		<span>Tags：</span>
-            
-    
-		</div>
-
-</div>
-
-<div id="article-content">
-	<h3 id="apt安装sudo-apt-update"><a href="#apt安装sudo-apt-update" class="headerlink" title="apt安装sudo apt update"></a><strong>apt安装</strong>sudo apt update</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx</span><br><span class="line"></span><br><span class="line">nginx -V</span><br><span class="line"></span><br><span class="line">默认安装路径 /etc/nginx/nginx.<span class="property">conf</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="nginx安装位置"><a href="#nginx安装位置" class="headerlink" title="nginx安装位置"></a><strong>nginx安装位置</strong></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**whereis nginx**</span><br></pre></td></tr></table></figure>
-
-<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a><strong>启动</strong></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx start</span><br></pre></td></tr></table></figure>
-
-<h3 id="检查nginx配置文件"><a href="#检查nginx配置文件" class="headerlink" title="检查nginx配置文件"></a><strong>检查nginx配置文件</strong></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx reload</span><br></pre></td></tr></table></figure>
-
-<h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a><strong>重启</strong></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reopen</span><br></pre></td></tr></table></figure>
-
-<h3 id="停止"><a href="#停止" class="headerlink" title="停止"></a><strong>停止</strong></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s stop</span><br></pre></td></tr></table></figure>
-
-<h3 id="端口占用"><a href="#端口占用" class="headerlink" title="端口占用"></a>端口占用</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">查看端口</span><br><span class="line">netstat -lntp</span><br><span class="line"></span><br><span class="line">nginx端口</span><br><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">80</span>              <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:*               <span class="variable constant_">LISTEN</span>      <span class="number">248057</span>/<span class="attr">nginx</span>: master</span><br><span class="line"></span><br><span class="line">结束端口</span><br><span class="line">kill <span class="number">248057</span></span><br><span class="line"></span><br><span class="line">重启nginx</span><br><span class="line">service nginx restart</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-</div>
-
-
-    <div class="post-guide">
-        <div class="item left">
-            
-              <a href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AEhttps/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Nginx配置https
-              </a>
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2018/05/09/React%E5%9F%BA%E7%A1%80/">
-                React基础
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
+    <span>easterCat</span>
+    <span>2023-01-11 12:04:03</span>
+    <div id="article-categories">
+        
+        <span>Categories：</span>
+          
+        <span>Tags：</span>
+         
     </div>
+</div>
+
+<div id="article-content"><h3 id="apt安装sudo-apt-update"><a href="#apt安装sudo-apt-update" class="headerlink" title="apt安装sudo apt update"></a><strong>apt安装</strong>sudo apt update</h3><pre><code class="jsx">sudo apt install nginx
+
+nginx -V
+
+默认安装路径 /etc/nginx/nginx.conf
+</code></pre>
+<h3 id="nginx安装位置"><a href="#nginx安装位置" class="headerlink" title="nginx安装位置"></a><strong>nginx安装位置</strong></h3><pre><code class="jsx">**whereis nginx**
+</code></pre>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a><strong>启动</strong></h3><pre><code class="jsx">service nginx start
+</code></pre>
+<h3 id="检查nginx配置文件"><a href="#检查nginx配置文件" class="headerlink" title="检查nginx配置文件"></a><strong>检查nginx配置文件</strong></h3><pre><code class="jsx">service nginx reload
+</code></pre>
+<h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a><strong>重启</strong></h3><pre><code class="jsx">nginx -s reopen
+</code></pre>
+<h3 id="停止"><a href="#停止" class="headerlink" title="停止"></a><strong>停止</strong></h3><pre><code class="jsx">nginx -s stop
+</code></pre>
+<h3 id="端口占用"><a href="#端口占用" class="headerlink" title="端口占用"></a>端口占用</h3><pre><code class="jsx">查看端口
+netstat -lntp
+
+nginx端口
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      248057/nginx: master
+
+结束端口
+kill 248057
+
+重启nginx
+service nginx restart
+</code></pre>
+</div>
 
 
-
-	<div id="vcomments"></div>
+<div class="post-guide">
+    <div class="item left">
+        
+        <a href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AEhttps/">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            Nginx配置https
+        </a>
+        
+    </div>
+    <div class="item right">
+        
+        <a href="/2018/05/09/React%E5%9F%BA%E7%A1%80/">
+            React基础
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+        
+    </div>
+</div>
+ 
+<div id="vcomments"></div>
 
 
 <script>
-	
-		// 评论
-		new Valine({
-			el: '#vcomments',
-			appId: '',
-			appKey: '',
-			placeholder: '请输入评论',
-			path: window.location.pathname,
-			avatar: 'retro',
-			highlight: false,
-      recordIP: true,
-      enableQQ: true,
-			requiredFields: ['nick','mail']
-		})
-	
-	
+    
+    	// 评论
+    	new Valine({
+    		el: '#vcomments',
+    		appId: '',
+    		appKey: '',
+    		placeholder: '请输入评论',
+    		path: window.location.pathname,
+    		avatar: 'retro',
+    		highlight: false,
+         recordIP: true,
+         enableQQ: true,
+    		requiredFields: ['nick','mail']
+    	})
+    
+    
 </script>
+
 	</div>
 	<div id="footer">
 	<p>
