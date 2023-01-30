@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>2023个人总结</title>
+      <link href="/2023/01/28/2023%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/"/>
+      <url>/2023/01/28/2023%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><ul><li>php(version 4.0) 2015 放弃</li><li>jquery (version 1.64) 2015 放弃</li><li>angular(version 1.54) 2016 放弃</li><li>express(v 2.0) 2016 放弃</li><li>react(v 15.6) 2017 放弃</li><li>nextjs(v 7.0) 2018 放弃</li><li>nestjs(v 6.0) 2018 放弃</li><li>vue(v 2.0) 2018 使用</li><li>nuxtjs(v 2.0) 2019 使用</li><li>vue(v 3.0) 2022 使用</li><li>nuxtjs(v 3.0) 2022 使用</li><li>python(v 3.8) 2022 学习</li><li>flask(v 2.1) 2022 学习</li></ul><h3 id="2023计划"><a href="#2023计划" class="headerlink" title="2023计划"></a>2023计划</h3><ul><li>英语学习</li><li>python学习</li><li>web3学习</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mysql的processlist中处理表连接</title>
       <link href="/2023/01/16/Mysql%E7%9A%84processlist%E4%B8%AD%E5%A4%84%E7%90%86%E8%A1%A8%E8%BF%9E%E6%8E%A5/"/>
       <url>/2023/01/16/Mysql%E7%9A%84processlist%E4%B8%AD%E5%A4%84%E7%90%86%E8%A1%A8%E8%BF%9E%E6%8E%A5/</url>
