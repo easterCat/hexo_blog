@@ -10,7 +10,7 @@
 
     <!-- title -->
     
-    <title> Hexo</title>
+    <title> Nvm管理工具 |  Hexo</title>
 
     <!-- keywords,description -->
      
@@ -250,7 +250,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2023/02/08/Nvm%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
                      
 										    Nvm管理工具
@@ -299,33 +299,140 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<div id="index">
-	
-		<div class="index-li">
-			<a href="/2023/01/11/SEO%E6%8A%80%E5%B7%A7/">
-				<h2 class="index-title">
-					SEO技巧
-				</h2>
-				<div class="index-brief">
-					SEO技巧这篇文章其实是我本人的总结，因为工作中做完了一个官方网站并成功上线，最后组长检查代码看到我的keyword等一系列信息都是空的，把我骂得狗血淋头。一言不合就作总结，总结一些简单但是我们能做的seo小技巧，送给想把网站做到极致的人。
-SEO要点：
-语义化html标签，用合适的标签嵌套合适的内
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2023-01-11</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-	</div>
+		<h1 id="article-title">
+    Nvm管理工具
+</h1>
+<div class="article-meta">
+    
+    <span>easterCat</span>
+    <span>2023-02-08 11:33:38</span>
+    <div id="article-categories">
+        
+        <span>Categories：</span>
+          
+        <span>Tags：</span>
+         
+        <span>
+            <i class="fa fa-tag" aria-hidden="true">
+                <a href="/tags/Node/"
+                    >Node</a
+                >
+            </i>
+        </span>
+          
+    </div>
 </div>
+
+<div id="article-content"><h2 id="NVM"><a href="#NVM" class="headerlink" title="NVM"></a>NVM</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
+<p>Linux 安装</p>
+</blockquote>
+<pre><code>wget -qO- https://raw.githubusercontent.com/creationix/nvm/v1/install.sh | bash
+
+source ~/.bashrc
+</code></pre>
+<blockquote>
+<p>MacOS 安装</p>
+</blockquote>
+<pre><code>curl -0- https://raw.githubusercontent.com/creationix/nvm/v8/install.sh | bash
+</code></pre>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre><code># 显示所有信息
+
+nvm --help
+
+# 显示当前安装的nvm版本
+
+nvm --version
+
+# 安装指定的版本，如果不存在.nvmrc,就从指定的资源下载安装
+
+nvm install [-s] &lt;version&gt;
+
+# 安装指定的版本，平且下载最新的npm
+
+nvm install [-s] &lt;version&gt;  -latest-npm
+
+# 卸载指定的版本
+
+nvm uninstall &lt;version&gt;
+
+# 使用已经安装的版本  切换版本
+
+nvm use [--silent] &lt;version&gt;
+
+# 查看当前使用的node版本
+
+nvm current
+
+# 查看已经安装的版本
+
+nvm ls
+
+# 查看指定版本
+
+nvm ls  &lt;version&gt;
+
+# 显示远程所有可以安装的nodejs版本
+
+nvm ls-remote
+
+# 查看长期支持的版本
+
+nvm ls-remote --lts
+
+# 安装罪行的npm
+
+nvm install-latest-npm
+
+# 重新安装指定的版本
+
+nvm reinstall-packages &lt;version&gt;
+
+# 显示nvm的cache
+
+nvm cache dir
+
+# 清空nvm的cache
+
+nvm cache clear
+</code></pre>
+</div>
+
+
+<div class="post-guide">
+    <div class="item left">
+        
+    </div>
+    <div class="item right">
+        
+        <a href="/2023/02/08/Npm%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+            Npm配置文件
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+        
+    </div>
+</div>
+ 
+<div id="vcomments"></div>
+
+
+<script>
+    
+    	// 评论
+    	new Valine({
+    		el: '#vcomments',
+    		appId: '',
+    		appKey: '',
+    		placeholder: '请输入评论',
+    		path: window.location.pathname,
+    		avatar: 'retro',
+    		highlight: false,
+         recordIP: true,
+         enableQQ: true,
+    		requiredFields: ['nick','mail']
+    	})
+    
+    
+</script>
 
 	</div>
 	<div id="footer">

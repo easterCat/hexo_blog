@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        name="viewport"
+    />
+
+    <!-- title -->
+    
+    <title> Npm脚本命令 |  Hexo</title>
+
+    <!-- keywords,description -->
+     
+
+    <!-- favicon -->
+     <link rel="shortcut icon" href="/favicon.ico"> 
+
+    <!-- search -->
+    <script>
+        var searchEngine = "https://www.google.com/search?q=";
+        if (
+            typeof searchEngine == "undefined" ||
+            searchEngine == null ||
+            searchEngine == ""
+        ) {
+            searchEngine = "https://www.google.com/search?q=";
+        }
+        var homeHost = "wujun234.github.io";
+        if (
+            typeof homeHost == "undefined" ||
+            homeHost == null ||
+            homeHost == ""
+        ) {
+            homeHost = window.location.host;
+        }
+    </script>
+
+    
+<link rel="stylesheet" href="/css/main.css">
+ 
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.17.1/styles/monokai.css">
+ 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+ 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+ 
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+    
+<script src="/js/main.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
+  
+    <script
+        async
+        src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">Hexo</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+	
+
+	
+
+		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>
+		<li class="menu-item">
+			<a href="https://github.com/wujun234" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/01/28/2023%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">
+                     
+										    2023个人总结
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/01/11/AndroidStudio%E6%93%8D%E4%BD%9C/">
+                     
+										    AndroidStudio操作
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/01/12/Flask-sqlalchemy%E4%BD%BF%E7%94%A8/">
+                     
+										    Flask-sqlalchemy使用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/01/11/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8/">
+                     
+										    Git常用命令的使用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/01/16/Mysql%E7%9A%84processlist%E4%B8%AD%E5%A4%84%E7%90%86%E8%A1%A8%E8%BF%9E%E6%8E%A5/">
+                     
+										    Mysql的processlist中处理表连接
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AE/">
+                     
+										    Nginx配置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/01/11/Nginx%E9%85%8D%E7%BD%AEHttps/">
+                     
+										    Nginx配置Https
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/06/Npm%E5%92%8CPackage%E6%8F%8F%E8%BF%B0%E6%96%87%E4%BB%B6/">
+                     
+										    Npm和Package描述文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/08/Npm%E6%8F%8F%E8%BF%B0%E6%96%87%E4%BB%B6/">
+                     
+										    Npm描述文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/08/Npm%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">
+                     
+										    Npm版本控制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2023/02/08/Npm%E8%84%9A%E6%9C%AC%E5%91%BD%E4%BB%A4/">
+                     
+										    Npm脚本命令
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/08/Npm%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+                     
+										    Npm配置文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/08/Nvm%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
+                     
+										    Nvm管理工具
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2018/05/09/React%E5%9F%BA%E7%A1%80/">
+                     
+										    React基础
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/01/11/SEO%E6%8A%80%E5%B7%A7/">
+                     
+										    SEO技巧
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/01/11/Ubuntu18%E5%AE%89%E8%A3%85nginx/">
+                     
+										    Ubuntu18安装nginx
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+    Npm脚本命令
+</h1>
+<div class="article-meta">
+    
+    <span>easterCat</span>
+    <span>2023-02-08 11:32:00</span>
+    <div id="article-categories">
+        
+        <span>Categories：</span>
+          
+        <span>Tags：</span>
+         
+        <span>
+            <i class="fa fa-tag" aria-hidden="true">
+                <a href="/tags/Npm/"
+                    >Npm</a
+                >
+            </i>
+        </span>
+          
+    </div>
+</div>
+
+<div id="article-content"><h2 id="npm-cli-脚本命令"><a href="#npm-cli-脚本命令" class="headerlink" title="npm-cli 脚本命令"></a>npm-cli 脚本命令</h2><ul>
+<li>npm access：在发布的包上设置访问级别</li>
+<li>npm adduser：Add a registry user account 添加仓库用户账户</li>
+<li>npm audit：Run a security audit 执行安全审计（自动安装应该更新的脆弱的模块包）</li>
+<li>bin：显示 npm bin 文件夹</li>
+<li>bugs：在浏览器中打开依赖包的 BUG 讨论社区</li>
+<li>build：构建依赖包</li>
+<li>cache：管理模块的缓存</li>
+<li>ci：Install a project with a clean slate</li>
+<li>completion：Tab Completion for npm</li>
+<li>config：管理 npm 配置文件</li>
+<li>dedupe：Reduce duplication</li>
+<li>deprecate：Deprecate a version of a package</li>
+<li>npm dist-tag：修改依赖包分发标签</li>
+<li>docs：在浏览器中打开依赖包的文档</li>
+<li>doctor：Check your environments</li>
+<li>edit：Edit an installed package</li>
+<li>explore：Browse an installed package</li>
+<li>help-search：Search npm help documentation</li>
+<li>help：查看某条命令的详细帮助</li>
+<li>hook：Manage registry hooks</li>
+<li>init：创建 npm 依赖包配置文件</li>
+<li>install-ci-test：Install a project with a clean slate and run tests</li>
+<li>install-test：Install package(s) and run tests</li>
+<li>install：安装依赖包</li>
+<li>link：符号连接包文件夹</li>
+<li>logout：Log out of the registry</li>
+<li>npm ls：列出已安装依赖包</li>
+<li>npm：javascript package manager</li>
+<li>org：Manage orgs</li>
+<li>outdated：检查过期的依赖包</li>
+<li>owner：Manage package owners</li>
+<li>pack：Create a tarball from a package</li>
+<li>ping：Ping npm registry</li>
+<li>prefix：显示路径前缀</li>
+<li>profile：变更注册表配置文件上的设置</li>
+<li>prune：删除无关的软件包</li>
+<li>publish：发布依赖包</li>
+<li>rebuild：重新构建依赖包</li>
+<li>repo：在浏览器中打开依赖包的储存仓库</li>
+<li>restart：Restart a package</li>
+<li>root：查看包的安装路径</li>
+<li>run-script：运行 npm script 脚本</li>
+<li>search：搜索依赖包</li>
+<li>shrinkwrap：Lock down dependency versions for publication</li>
+<li>star：收藏依赖包</li>
+<li>stars：查看依赖包收藏夹</li>
+<li>start：启动依赖包</li>
+<li>stop：停止依赖包</li>
+<li>team：Manage organization teams and team memberships</li>
+<li>test：测试依赖包</li>
+<li>token：管理鉴权令牌</li>
+<li>uninstall：移除依赖包</li>
+<li>unpublish：从公有仓库中移除依赖包</li>
+<li>update：U 更新模块</li>
+<li>version：查看模块版本</li>
+<li>npm view：查看模块的注册信息</li>
+<li>whoami：显示当前 npm 用户信息</li>
+</ul>
+<h3 id="npm-init"><a href="#npm-init" class="headerlink" title="npm init"></a>npm init</h3><blockquote>
+<p>创建项目：</p>
+</blockquote>
+<pre><code># 按提示输入项目信息
+
+npm init
+
+# 使用默认值创建项目
+
+npm init -y
+</code></pre>
+<h3 id="npm-install"><a href="#npm-install" class="headerlink" title="npm install"></a>npm install</h3><blockquote>
+<p>安装依赖模块：</p>
+</blockquote>
+<pre><code>npm install
+
+# 或者
+
+npm i
+</code></pre>
+<h3 id="安装多个模块"><a href="#安装多个模块" class="headerlink" title="安装多个模块"></a>安装多个模块</h3><blockquote>
+<p>无需为你要安装的每个模块都输入一遍 <code>npm i</code> 指令：</p>
+</blockquote>
+<pre><code>npm i gulp-pug
+
+npm i gulp-debug
+
+npm i gulp-sass
+
+# 只需输入一行命令即可一次性批量安装模块
+
+npm i gulp-pug gulp-debug gulp-sass
+
+# 更便捷的是，如果安装的所有模块的前缀是相同的，则可以这样安装，无需输入完整模块名
+
+npm i gulp&#123;-debug,-sass,-pug&#125;
+</code></pre>
+<h3 id="安装标识"><a href="#安装标识" class="headerlink" title="安装标识"></a>安装标识</h3><pre><code># 安装包到生产环境依赖中
+
+npm i gulp --save-prod
+
+# 更简化，你可以使用 `-P` 标识
+
+npm i gulp -P
+
+# 同理，开发环境下的依赖安装，亦可使用 `-D` 代替 `--save-dev`
+
+npm i gulp -D
+</code></pre>
+<blockquote>
+<p>当不带任何安装标识时，npm 默认将模块作为依赖项目添加到 <code>package.json</code> 文件中。如果你想避免这样，你可以使用 <code>no-save</code> 安装：</p>
+</blockquote>
+<pre><code>npm i vue --no-save
+</code></pre>
+<h3 id="安装指定版本"><a href="#安装指定版本" class="headerlink" title="安装指定版本"></a>安装指定版本</h3><pre><code># 默认安装 latest 标签的版本
+
+# 如果没有指定 latest，就是最新发布的版本
+
+npm install react
+
+# 如果你想安装一个不是最新版本的安装包
+
+npm i react@0
+
+# 鉴于记住标签比记住版本数字容易，亦可使用 `npm v` 命令来查到的版本信息列表中的 `dist-tag` 来安装
+
+npm i react@beta
+</code></pre>
+<h3 id="npm-search"><a href="#npm-search" class="headerlink" title="npm search"></a>npm search</h3><pre><code># 搜索依赖包
+
+npm search &lt;package-name&gt;
+
+npm search react
+
+# 或者
+
+npm s &lt;package-name&gt;
+
+npm se &lt;package-name&gt;
+
+npm find &lt;package-name&gt;
+</code></pre>
+<h3 id="npm-view"><a href="#npm-view" class="headerlink" title="npm view"></a>npm view</h3><pre><code># 查看包信息
+
+npm view &lt;package-name&gt;
+
+npm view react
+
+# 或者
+
+npm v react
+
+# 如果只想看安装包最近的版本信息
+
+npm v &lt;package-name&gt; version
+
+# 如果想获取安装包完整的版本信息列表，可使用复数形式
+
+npm v &lt;package-name&gt; versions
+</code></pre>
+<h3 id="卸载模块"><a href="#卸载模块" class="headerlink" title="卸载模块"></a>卸载模块</h3><blockquote>
+<p>如果你不想转到 <code>package.json</code> 文件并手动删除依赖包，则可以用以下方法删除：</p>
+</blockquote>
+<pre><code>npm uninstall vue
+</code></pre>
+<blockquote>
+<p>这个命令会删除 <code>node_modules</code> 文件夹及 <code>package.json</code> 中对应的包。当然，你也可以用 <code>rm</code>、<code>un</code> 或 <code>r</code> 来达到相同的效果：</p>
+</blockquote>
+<p><code>npm rm vue</code></p>
+<blockquote>
+<p>如果由于某些原因，你只想从 <code>node_modules</code> 文件夹中删除安装包，但是想在 <code>package.json</code> 中保留其依赖项，那么你可以使用 <code>no-save</code> 标识。</p>
+</blockquote>
+<pre><code>npm rm vue --no-save
+</code></pre>
+<h3 id="npm-ls"><a href="#npm-ls" class="headerlink" title="npm ls"></a>npm ls</h3><blockquote>
+<p><code>npm ls</code>此命令将以树状结构将已安装的软件包的所有版本及其依赖项打印到标准输出。</p>
+</blockquote>
+<pre><code># 查看当前仓库使用模块（嵌套）
+
+npm ls
+
+# 查看当前仓库使用模块（仅单层）
+
+npm ls --depth 0
+
+# 查看全局模块包已安装模块
+
+npm ls -g
+
+# 查看全局模块包已安装模块（仅单层）
+
+npm ls -g --depth 0
+</code></pre>
+<h3 id="npm-outdate"><a href="#npm-outdate" class="headerlink" title="npm outdate"></a>npm outdate</h3><blockquote>
+<p>大多数时候，你需要保持本地依赖的更新，你可以在项目目录下先查看一下安装包有没有版本更新：</p>
+</blockquote>
+<p><code>npm outdate</code></p>
+<h3 id="执行测试"><a href="#执行测试" class="headerlink" title="执行测试"></a>执行测试</h3><pre><code>npm run tests
+
+npm test
+
+npm t
+</code></pre>
+<h3 id="显示可用脚本"><a href="#显示可用脚本" class="headerlink" title="显示可用脚本"></a>显示可用脚本</h3><blockquote>
+<p>我们可以通过</p>
+</blockquote>
+<p><code>npm run</code></p>
+<h3 id="安装-Github-包"><a href="#安装-Github-包" class="headerlink" title="安装 Github 包"></a>安装 Github 包</h3><blockquote>
+<p>可以直接安装来自 Github Repo 的模块：</p>
+</blockquote>
+<pre><code>npm i https://github.com/sindresorhus/gulp-debug
+</code></pre>
+<blockquote>
+<p>或者你可以忽略域名安装：</p>
+</blockquote>
+<pre><code>npm i sindresorhus/gulp-debug
+</code></pre>
+<h3 id="打开模块包仓库主页"><a href="#打开模块包仓库主页" class="headerlink" title="打开模块包仓库主页"></a>打开模块包仓库主页</h3><blockquote>
+<p>当然可以直接谷歌搜索，然后找到对应的包链接打开：</p>
+</blockquote>
+<pre><code>npm repo create-react-app
+</code></pre>
+<h3 id="列出所有-NPM-环境的可用变量"><a href="#列出所有-NPM-环境的可用变量" class="headerlink" title="列出所有 NPM 环境的可用变量"></a>列出所有 NPM 环境的可用变量</h3><blockquote>
+<p>你可以使用这个命令来列出所有 NPM 环境的可用变量：</p>
+</blockquote>
+<pre><code>npm run env | grep npm_
+</code></pre>
+<blockquote>
+<p>默认情况下，npm 会重命名你的变量，给其加上前缀 <code>npm_package</code>，并将其结构保留在 <code>package.json</code> 文件中，即变为 <code>config_build_folder</code>。</p>
+</blockquote>
+<h3 id="在-npm-脚本中使用-npm-变量"><a href="#在-npm-脚本中使用-npm-变量" class="headerlink" title="在 npm 脚本中使用 npm 变量"></a>在 npm 脚本中使用 npm 变量</h3><blockquote>
+<p>你可以看到可用变量的完整列表，如果你想使用这些变量中的任何值，就可以在 <code>package.json</code> 中使用：</p>
+</blockquote>
+<pre><code>&quot;scripts&quot;: &#123;
+
+    &quot;build&quot;: &quot;gulp build --dist $npm_package_config_build_folder&quot;
+
+&#125;
+</code></pre>
+<blockquote>
+<p>当你执行 <code>npm run build</code> 的时候，实际执行的是这样的：</p>
+</blockquote>
+<pre><code>gulp build --dist ./dist
+</code></pre>
+<h3 id="检查过期的依赖包"><a href="#检查过期的依赖包" class="headerlink" title="检查过期的依赖包"></a>检查过期的依赖包</h3><pre><code># 查看过期依赖包
+
+npm outdated
+
+# 以 JSON 形式输出
+
+npm outdated --json
+</code></pre>
+<h3 id="设置镜像源"><a href="#设置镜像源" class="headerlink" title="设置镜像源"></a>设置镜像源</h3><blockquote>
+<p>临时使用</p>
+</blockquote>
+<pre><code>npm --registry https://registry.npm.taobao.org install express
+</code></pre>
+<blockquote>
+<p>持久使用</p>
+</blockquote>
+<pre><code>npm config set registry https://registry.npm.taobao.org
+</code></pre>
+<h3 id="npm-create"><a href="#npm-create" class="headerlink" title="npm create"></a>npm create</h3></div>
+
+
+<div class="post-guide">
+    <div class="item left">
+        
+        <a href="/2023/02/08/Npm%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            Npm配置文件
+        </a>
+        
+    </div>
+    <div class="item right">
+        
+        <a href="/2023/02/08/Npm%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">
+            Npm版本控制
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+        
+    </div>
+</div>
+ 
+<div id="vcomments"></div>
+
+
+<script>
+    
+    	// 评论
+    	new Valine({
+    		el: '#vcomments',
+    		appId: '',
+    		appKey: '',
+    		placeholder: '请输入评论',
+    		path: window.location.pathname,
+    		avatar: 'retro',
+    		highlight: false,
+         recordIP: true,
+         enableQQ: true,
+    		requiredFields: ['nick','mail']
+    	})
+    
+    
+</script>
+
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">easterCat</a> 
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>

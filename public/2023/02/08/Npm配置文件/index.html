@@ -10,7 +10,7 @@
 
     <!-- title -->
     
-    <title> Hexo</title>
+    <title> Npm配置文件 |  Hexo</title>
 
     <!-- keywords,description -->
      
@@ -239,7 +239,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2023/02/08/Npm%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
                      
 										    Npm配置文件
@@ -299,33 +299,118 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<div id="index">
-	
-		<div class="index-li">
-			<a href="/2023/01/11/SEO%E6%8A%80%E5%B7%A7/">
-				<h2 class="index-title">
-					SEO技巧
-				</h2>
-				<div class="index-brief">
-					SEO技巧这篇文章其实是我本人的总结，因为工作中做完了一个官方网站并成功上线，最后组长检查代码看到我的keyword等一系列信息都是空的，把我骂得狗血淋头。一言不合就作总结，总结一些简单但是我们能做的seo小技巧，送给想把网站做到极致的人。
-SEO要点：
-语义化html标签，用合适的标签嵌套合适的内
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2023-01-11</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-	</div>
+		<h1 id="article-title">
+    Npm配置文件
+</h1>
+<div class="article-meta">
+    
+    <span>easterCat</span>
+    <span>2023-02-08 11:32:46</span>
+    <div id="article-categories">
+        
+        <span>Categories：</span>
+          
+        <span>Tags：</span>
+         
+        <span>
+            <i class="fa fa-tag" aria-hidden="true">
+                <a href="/tags/Npm/"
+                    >Npm</a
+                >
+            </i>
+        </span>
+          
+    </div>
 </div>
+
+<div id="article-content"><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><ul>
+<li>.npmrc</li>
+<li>.npmignore</li>
+<li>.npm</li>
+</ul>
+<h3 id="npmrc"><a href="#npmrc" class="headerlink" title=".npmrc"></a>.npmrc</h3><pre><code># 查看 .npmrc 文件在哪里
+
+npm config ls -l
+</code></pre>
+<blockquote>
+<p>npm 的缓存目录在哪里</p>
+</blockquote>
+<pre><code>npm config get cache
+</code></pre>
+<blockquote>
+<p>npm 的全局 node 包在哪里</p>
+</blockquote>
+<blockquote>
+<p>那些通过 <code>npm install xxx -g</code> 或者 <code>cnpm install xxx -g</code> 或者 <code>yarn global add xxx</code> 安装的 <code>xxx</code> 文件，到底安装在什么地方？</p>
+</blockquote>
+<pre><code>npm config get prefix
+</code></pre>
+<blockquote>
+<p>默认情况下：</p>
+</blockquote>
+<ul>
+<li>Windows 系统的路径基础部分是： <code>%APPDATA%/npm/</code></li>
+<li>MacOS 系统下路径基础部分是 <code>/usr/local</code></li>
+</ul>
+<blockquote>
+<p>默认的全局安装包位置：</p>
+</blockquote>
+<ul>
+<li><p>Windows 系统下路径是：</p>
+<pre><code>%APPDATA%/npm/node_modules/
+</code></pre>
+</li>
+<li><p>MacOS 系统下路径是：</p>
+<pre><code>/usr/local/lib/node_modules/
+</code></pre>
+</li>
+</ul>
+<blockquote>
+<p>当然对于全局包路径的查看，还可以使用下面的命令：<code>npm root -g</code></p>
+</blockquote>
+<h3 id="npmignore"><a href="#npmignore" class="headerlink" title=".npmignore"></a>.npmignore</h3><h3 id="npm"><a href="#npm" class="headerlink" title=".npm"></a>.npm</h3></div>
+
+
+<div class="post-guide">
+    <div class="item left">
+        
+        <a href="/2023/02/08/Nvm%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            Nvm管理工具
+        </a>
+        
+    </div>
+    <div class="item right">
+        
+        <a href="/2023/02/08/Npm%E8%84%9A%E6%9C%AC%E5%91%BD%E4%BB%A4/">
+            Npm脚本命令
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+        
+    </div>
+</div>
+ 
+<div id="vcomments"></div>
+
+
+<script>
+    
+    	// 评论
+    	new Valine({
+    		el: '#vcomments',
+    		appId: '',
+    		appKey: '',
+    		placeholder: '请输入评论',
+    		path: window.location.pathname,
+    		avatar: 'retro',
+    		highlight: false,
+         recordIP: true,
+         enableQQ: true,
+    		requiredFields: ['nick','mail']
+    	})
+    
+    
+</script>
 
 	</div>
 	<div id="footer">

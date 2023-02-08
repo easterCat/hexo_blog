@@ -196,9 +196,64 @@ var _hmt = _hmt || [];
 			
 							<ul>
 								<li class="file">
-									<a href="/2023/02/06/Npm%E5%92%8CPackage-json/">
+									<a href="/2023/02/06/Npm%E5%92%8CPackage%E6%8F%8F%E8%BF%B0%E6%96%87%E4%BB%B6/">
                      
-										    Npm和Package-json
+										    Npm和Package描述文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/08/Npm%E6%8F%8F%E8%BF%B0%E6%96%87%E4%BB%B6/">
+                     
+										    Npm描述文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/08/Npm%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">
+                     
+										    Npm版本控制
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/08/Npm%E8%84%9A%E6%9C%AC%E5%91%BD%E4%BB%A4/">
+                     
+										    Npm脚本命令
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/08/Npm%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+                     
+										    Npm配置文件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/08/Nvm%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
+                     
+										    Nvm管理工具
                      
 									</a>
 								</li>
@@ -247,17 +302,109 @@ var _hmt = _hmt || [];
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2023/02/06/Npm%E5%92%8CPackage-json/">
+			<a href="/2023/02/08/Npm%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
 				<h2 class="index-title">
-					Npm和Package.json
+					Npm配置文件
 				</h2>
 				<div class="index-brief">
-					npm 和 package.jsonnpm 是一个包管理器，它让 JavaScript 开发者分享、复用代码更方便。一个网站里通常有几十甚至上百个 package，分散在各处，通常会将这些包按照各自的功能进行划分（类似我们安卓开发中的划分子模块），但是如果重复造一些轮子，不如上传到一个公共平台，让更
+					配置文件
+.npmrc
+.npmignore
+.npm
+
+.npmrc# 查看 .npmrc 文件在哪里
+
+npm config ls -l
+
+
+npm 的缓存目录在哪里
+
+npm config get cache
+
+
+npm 的全局 node 包在哪里
+
+
+那些通过 npm install xxx
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2023-02-06</span>
+				    <span>2023-02-08</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2023/02/08/Npm%E8%84%9A%E6%9C%AC%E5%91%BD%E4%BB%A4/">
+				<h2 class="index-title">
+					Npm脚本命令
+				</h2>
+				<div class="index-brief">
+					npm-cli 脚本命令
+npm access：在发布的包上设置访问级别
+npm adduser：Add a registry user account 添加仓库用户账户
+npm audit：Run a security audit 执行安全审计（自动安装应该更新的脆弱的模块包）
+bin：显示 np
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2023-02-08</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2023/02/08/Npm%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">
+				<h2 class="index-title">
+					Npm版本控制
+				</h2>
+				<div class="index-brief">
+					npm 版本控制查看依赖包版本
+通过执行以下命令能够查看某个依赖包的最新版本。
+
+# 查看某个 package 的注册信息
+
+npm view &lt;package-name&gt;
+
+# 查看某个 package 的最新版本
+
+npm view &lt;package-name&gt; vers
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2023-02-08</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
+			<a href="/2023/02/08/Npm%E6%8F%8F%E8%BF%B0%E6%96%87%E4%BB%B6/">
+				<h2 class="index-title">
+					Npm描述文件
+				</h2>
+				<div class="index-brief">
+					NPM 包描述文件
+npm 即 npde package module
+
+
+CommonJS 的包规范的定义由 包结构 和 包描述文件 两个部分组成，前者用于组织包中的各种文件，后者则用于描述包的相关信息，以供外部读取分析。
+
+包结构
+包实际上是一个存档文件，即一个目录直接打包为 .zip 或 .t
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2023-02-08</span>
                     
                             
                     

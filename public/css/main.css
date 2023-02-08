@@ -40,7 +40,7 @@ a {
 #title {
     font-size: 20px;
     color: #b0ddce;
-    padding: 10px 15px;
+    padding: 15px 15px;
 }
 #menu {
     position: fixed;
@@ -49,7 +49,7 @@ a {
 }
 #menu .menu-item {
     display: inline-block;
-    padding: 10px;
+    padding: 15px;
     list-style: none;
 }
 #menu .menu-item-link {
@@ -106,7 +106,7 @@ a {
     position: absolute;
     width: 230px;
     height: 35px;
-    margin: 5px 10px 5px 10px;
+    margin: 5px 15px 5px 15px;
     border-radius: 5px;
     background: #3f4448;
     text-indent: 20px;
@@ -147,15 +147,23 @@ a {
     display: none;
 }
 #sidebar ul {
-    padding: 0px 5px 5px 20px;
+    padding: 2px 2px 2px 15px;
+}
+#sidebar ul li.file {
+    margin-bottom: 2px;
 }
 #sidebar ul li {
     list-style: none;
     white-space: nowrap;
+    padding: 2px 0;
 }
 #sidebar ul li a {
     color: #999;
-    font-size: 14px;
+    font-size: 13px;
+}
+#sidebar ul li.file a {
+    font-size: 15px;
+    font-weight: bold;
 }
 
 #sidebar ul li a:hover {
@@ -168,14 +176,14 @@ a {
 }
 .article-toc ul li i {
     color: #999;
-    font-size: 8px;
+    font-size: 6px;
     vertical-align: middle;
 }
 .article-toc .level_1 {
     margin-left: 0px;
 }
 .article-toc .level_2 {
-    margin-left: 20px;
+    margin-left: 15px;
 }
 .article-toc .level_3 {
     margin-left: 40px;
@@ -209,7 +217,7 @@ a {
 
 .index-brief {
     position: relative;
-    padding: 5px 5px 10px 5px;
+    padding: 5px 5px 15px 5px;
     font-size: 14px;
     font-style: italic;
     color: #a3a3a3;
@@ -254,17 +262,17 @@ a {
     margin: 0.3rem;
     font-size: 0.9rem;
     border-radius: 5px;
-    color: #454d64;
+    color: #666;
     background-color: #e0eee8;
     transition: all 0.2s;
 }
 /* article */
 #article-title {
-    color: #454d64;
+    color: #666;
     border-bottom: 2px solid #ddd;
 }
 #article-content {
-    padding: 10px 0;
+    padding: 15px 0;
     border-bottom: 2px solid #ddd;
 }
 #article-content ol,
@@ -277,7 +285,7 @@ a {
 #article-content h1 {
     font-weight: bold;
     background-color: #f6f6f6;
-    color: #454d64;
+    color: #666;
     margin: 20px 0;
     border-bottom: 0px solid red;
     padding: 5px 12px;
@@ -289,7 +297,7 @@ a {
 #article-content h2 {
     font-weight: bold;
     background-color: #f6f6f6;
-    color: #454d64;
+    color: #666;
     margin: 20px 0;
     border-bottom: 0px solid #ff1493;
     padding: 5px 12px;
@@ -301,7 +309,7 @@ a {
 #article-content h3 {
     font-weight: bold;
     background-color: #f6f6f6;
-    color: #454d64;
+    color: #666;
     margin: 20px 0;
     border-bottom: 0px solid #4169e1;
     padding: 5px 12px;
@@ -313,7 +321,7 @@ a {
 #article-content h4 {
     font-weight: bold;
     background-color: #f6f6f6;
-    color: #454d64;
+    color: #666;
     margin: 20px 0;
     border-bottom: 0px solid #3cb371;
     padding: 5px 12px;
@@ -325,7 +333,7 @@ a {
 #article-content h5 {
     font-weight: bold;
     background-color: #f6f6f6;
-    color: #454d64;
+    color: #666;
     margin: 20px 0;
     border-bottom: 0px solid #ffc0cb;
     padding: 5px 12px;
@@ -334,7 +342,7 @@ a {
     border-radius: 0rem;
 }
 #article-content h6 {
-    color: #454d64;
+    color: #666;
     margin: 5px 0 5px;
 }
 #article-content a:hover {
@@ -349,16 +357,21 @@ a {
 }
 #article-content pre {
     font-size: 14px;
-    margin: 20px 0 15px;
+    margin: 15px 0;
 }
 #article-content blockquote {
-    padding: 0 1em;
-    color: #454d64;
-    border-left: 0.25em solid #dfe2e5;
+    margin: 16px 0;
+    padding: 15px 24px;
+    color: rgba(69, 77, 100, 0.7);
+    /* border-left: 4px solid #ebedf1; */
+    overflow: hidden;
+    background-color: #ebedf1;
 }
 #article-content p {
-    margin-bottom: 10px;
-    color: #454d64;
+    margin-bottom: 15px;
+}
+#article-content blockquote p {
+    margin: 0;
 }
 #article-content ul code,
 #article-content ol code,
@@ -380,11 +393,11 @@ table {
 }
 table th {
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border: 1px solid black;
 }
 table td {
-    padding: 5px 10px;
+    padding: 5px 15px;
     border: 1px solid black;
 }
 
