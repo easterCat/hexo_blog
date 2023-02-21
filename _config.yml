@@ -90,6 +90,3 @@ sidebar:
     usePostTitle: true
 
 searchEngine: "https://www.google.com/search?q="
-
-tags: true
-categories: true
