@@ -266,7 +266,6 @@ a {
     background-color: #e0eee8;
     transition: all 0.2s;
 }
-/* article */
 #article-title {
     color: #666;
     border-bottom: 2px solid #ddd;
@@ -275,111 +274,7 @@ a {
     padding: 15px 0;
     border-bottom: 2px solid #ddd;
 }
-#article-content ol,
-#article-content ul {
-    padding-left: 40px;
-}
-#article-content li {
-    margin: 5px 0;
-}
-#article-content h1 {
-    font-weight: bold;
-    background-color: #f6f6f6;
-    color: #666;
-    margin: 20px 0;
-    border-bottom: 0px solid red;
-    padding: 5px 12px;
-    border-left: 5px solid red;
-    margin: 12px 0px;
-    border-radius: 0rem; /*块圆角值*/
-}
 
-#article-content h2 {
-    font-weight: bold;
-    background-color: #f6f6f6;
-    color: #666;
-    margin: 20px 0;
-    border-bottom: 0px solid #ff1493;
-    padding: 5px 12px;
-    border-left: 5px solid #ff1493;
-    border-radius: 0rem;
-    margin: 12px 0px;
-}
-
-#article-content h3 {
-    font-weight: bold;
-    background-color: #f6f6f6;
-    color: #666;
-    margin: 20px 0;
-    border-bottom: 0px solid #4169e1;
-    padding: 5px 12px;
-    border-left: 5px solid #4169e1;
-    margin: 12px 0px;
-    border-radius: 0rem;
-}
-
-#article-content h4 {
-    font-weight: bold;
-    background-color: #f6f6f6;
-    color: #666;
-    margin: 20px 0;
-    border-bottom: 0px solid #3cb371;
-    padding: 5px 12px;
-    border-left: 5px solid #3cb371;
-    margin: 12px 0px;
-    border-radius: 0rem;
-}
-
-#article-content h5 {
-    font-weight: bold;
-    background-color: #f6f6f6;
-    color: #666;
-    margin: 20px 0;
-    border-bottom: 0px solid #ffc0cb;
-    padding: 5px 12px;
-    border-left: 5px solid #ffc0cb;
-    margin: 12px 0px;
-    border-radius: 0rem;
-}
-#article-content h6 {
-    color: #666;
-    margin: 5px 0 5px;
-}
-#article-content a:hover {
-    border-bottom: 1px solid;
-}
-#article-content h1 a:hover {
-    border-bottom: none;
-}
-#article-content img {
-    max-width: 100%;
-    height: auto;
-}
-#article-content pre {
-    font-size: 14px;
-    margin: 15px 0;
-}
-#article-content blockquote {
-    margin: 16px 0;
-    padding: 15px 24px;
-    color: rgba(69, 77, 100, 0.7);
-    /* border-left: 4px solid #ebedf1; */
-    overflow: hidden;
-    background-color: #ebedf1;
-}
-#article-content p {
-    margin-bottom: 15px;
-}
-#article-content blockquote p {
-    margin: 0;
-}
-#article-content ul code,
-#article-content ol code,
-#article-content p code {
-    margin: 0 5px;
-    background-color: rgba(27, 31, 35, 0.05);
-    border-radius: 3px;
-}
 table {
     margin: auto auto 15px;
     width: 100%;
@@ -400,7 +295,6 @@ table td {
     padding: 5px 15px;
     border: 1px solid black;
 }
-
 .post-guide {
     display: -webkit-box;
     display: -moz-box;

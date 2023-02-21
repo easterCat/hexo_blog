@@ -41,9 +41,9 @@
     
 <link rel="stylesheet" href="/css/main.css">
  
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/github-markdown-light.css">
  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.17.1/styles/monokai.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
  
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
  
@@ -323,7 +323,7 @@ var _hmt = _hmt || [];
     </div>
 </div>
 
-<div id="article-content"><h2 id="processlist中大量sleep"><a href="#processlist中大量sleep" class="headerlink" title="processlist中大量sleep"></a>processlist中大量sleep</h2><p>在生产环境切换mysql数据库，切换后数据库连接池爆满，抛出异常“too many connections”；</p>
+<div id="article-content" class="markdown-body"><h2 id="processlist中大量sleep"><a href="#processlist中大量sleep" class="headerlink" title="processlist中大量sleep"></a>processlist中大量sleep</h2><p>在生产环境切换mysql数据库，切换后数据库连接池爆满，抛出异常“too many connections”；</p>
 <p>出现这种现象，比较常见的原因是连接数真不够了，需要设置连接数：</p>
 <h3 id="连接数不够解决"><a href="#连接数不够解决" class="headerlink" title="连接数不够解决"></a>连接数不够解决</h3><pre><code class="js">mysql -u root -p;
 show full processlist;
