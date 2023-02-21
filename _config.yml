@@ -83,7 +83,7 @@ valine:
 deploy:
     type: git
     repository: https://github.com/easterCat/easterCat.github.io.git
-    branch: main
+    branch: master
 
 sidebar:
     # usePostTitle 为 ture 用文章名，不填或为 false 用文件名
