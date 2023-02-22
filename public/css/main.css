@@ -147,7 +147,7 @@ a {
     display: none;
 }
 #sidebar ul {
-    padding: 2px 2px 2px 15px;
+    padding: 2px 2px 0px 15px;
 }
 #sidebar ul li.file {
     margin-bottom: 2px;
@@ -156,11 +156,11 @@ a {
     list-style: none;
     white-space: nowrap;
     padding: 2px 0;
-    font-size: 15px;
+    font-size: 14px;
 }
 #sidebar ul li a {
     color: #999;
-    font-size: 13px;
+    font-size: 14px;
 }
 #sidebar ul li.file a {
     font-size: 14px;
